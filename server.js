@@ -70,7 +70,7 @@ function createTemplate(data) {
         <div class="container">
             <div>
                 <a href="/" class="linker">Home</a>
-                <hr/>
+               
             </div>
             <div>
                 <h1>${heading}</h1>
