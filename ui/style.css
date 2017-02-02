@@ -1,7 +1,7 @@
 body {
     font-family: sans-serif;
     background-color: lightgrey;
-    margin-top: 75px;
+    margin-top: 65px;
 }
 
 .center {
@@ -20,3 +20,13 @@ body {
     height: 200px;
 }
 
+.container {
+    font-family: verdana, sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 32px;
+    color: blue;
+}
