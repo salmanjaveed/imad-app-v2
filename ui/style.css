@@ -31,7 +31,7 @@ body {
     
 }
 
-_div {
+.link {
     background: red;
     display: block;
     color: white;
