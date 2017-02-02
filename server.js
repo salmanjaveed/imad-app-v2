@@ -60,11 +60,11 @@ function createTemplate(data) {
     var htmlTemplate = `
     <html>
     <head>
-            <meta name=viewport width=device-width init=1>
+            <meta name=viewport width=device-width initial-scale=1>
             <title>${title}</title>
     </head>    
     <body>
-        <div class=container>
+        <div class="container">
             
             <div>
                 <h1>${heading}</h1>
