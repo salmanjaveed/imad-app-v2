@@ -23,7 +23,8 @@ body {
 .container {
     max-width: 800px;
     font-family: verdana, sans-serif;
-    padding: 20px /*60px 20px;*/;
+    padding-left: 20px /*60px 20px;*/;
+    padding-right: 20px;
     margin: 0 auto;
     text-align: justify;
    
