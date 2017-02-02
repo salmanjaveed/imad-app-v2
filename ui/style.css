@@ -32,15 +32,15 @@ body {
     
 }
 
-.linker {
-    background-color: #4CAF50;
+.linker-div {
+    background-color: red;
     color: white;
     padding: 10px;
     font-size: 20px;
     text-align: center;
 }
 
-.active, .hover, .visited {
+.linker {
     color: white;
 }
 h1 {
