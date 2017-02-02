@@ -37,8 +37,12 @@ body {
     color: white;
     padding: 10px;
     font-size: 20px;
+    text-align: center;
 }
 
+.active, .hover, .visited {
+    color: white;
+}
 h1 {
     font-weight: 900;
     font-size: 32px;
