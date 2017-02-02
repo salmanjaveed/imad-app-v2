@@ -31,6 +31,13 @@ body {
     
 }
 
+_div {
+    background: red;
+    display: block;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+} 
 h1 {
     font-weight: 900;
     font-size: 32px;
