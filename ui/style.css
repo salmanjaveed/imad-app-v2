@@ -32,13 +32,12 @@ body {
     
 }
 
-.link {
+.linker {
     background: red;
     display: block;
     color: white;
     font-size: 20px;
     text-align: center;
-    margin: 0;
 
 } 
 h1 {
