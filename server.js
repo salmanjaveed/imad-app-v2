@@ -23,7 +23,7 @@ var articles = {
             </p>
 `
     },
-    'article-two': { title: 'This is the second title 2/3 in a series',
+    'article2': { title: 'This is the second title 2/3 in a series',
                 heading: 'This is the first heading 2/3 in a series',
                 content: `
             <p>Second paragraph</p>
