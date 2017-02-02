@@ -42,6 +42,7 @@ body {
 
 .linker {
     color: white;
+    text-decoration: none;
 }
 h1 {
     font-weight: 900;
