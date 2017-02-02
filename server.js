@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
 });
 
 var articles = {
-    article1: { title: 'This is the first title 1/3 in a series',
+    'article1': { title: 'This is the first title 1/3 in a series',
                 heading: 'This is the first heading 1/3 in a series',
                 content: `
             <p>First paragraph</p>
@@ -23,7 +23,7 @@ var articles = {
             </p>
 `
     },
-    article2: { title: 'This is the second title 2/3 in a series',
+    'article2': { title: 'This is the second title 2/3 in a series',
                 heading: 'This is the first heading 2/3 in a series',
                 content: `
             <p>Second paragraph</p>
@@ -36,7 +36,7 @@ var articles = {
             </p>
 `
     },
-    article3: { title: 'This is the third title 3/3 in a series',
+    'article3': { title: 'This is the third title 3/3 in a series',
                 heading: 'This is the first heading 3/3 in a series',
                 content: `
             <p>Third paragraph</p>
