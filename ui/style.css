@@ -21,8 +21,9 @@ body {
 }
 
 .container {
+    max-width: 800px;
     font-family: verdana, sans-serif;
-    padding: 20px;
+    padding: 600px 20px 20px;
     margin: 0 auto;
 }
 
