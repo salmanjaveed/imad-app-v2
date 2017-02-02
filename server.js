@@ -79,7 +79,7 @@ function createTemplate(data) {
 }
 
 app.get('/:articleName', function (req, res) {
-  res.send(createTemplate()));
+  res.send(createTemplate(article1));
 });
 
 app.get('/ui/style.css', function (req, res) {
