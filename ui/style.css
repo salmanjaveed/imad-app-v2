@@ -33,13 +33,12 @@ body {
 }
 
 .linker {
-    background: red;
-    display: block;
+    background-color: #4CAF50;
     color: white;
+    padding: 10px;
     font-size: 20px;
-    text-align: center;
-    margin:0 0 20px 0;
-} 
+}
+
 h1 {
     font-weight: 900;
     font-size: 32px;
