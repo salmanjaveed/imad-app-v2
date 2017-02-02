@@ -23,7 +23,7 @@ body {
 .container {
     max-width: 800px;
     font-family: verdana, sans-serif;
-
+   
     margin: 0 auto;
     text-align: justify;
    
@@ -53,6 +53,8 @@ body {
 .linker {
     color: white;
     text-decoration: none;
+     padding-left: 20px /*60px 20px;*/;
+    padding-right: 20px;
 }
 h1 {
     font-weight: 900;
