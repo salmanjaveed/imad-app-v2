@@ -72,12 +72,12 @@ function createTemplate(data) {
                 <a href="/" class="linker">Home</a>
                
             </div>
-        </div> 
-       <div class="container2">
-                <h1>${heading}</h1>
-                ${content}
-        </div>
-            
+        
+            <div class="container2">
+                    <h1>${heading}</h1>
+                    ${content}
+            </div>
+        </div>     
        
     </body>    
     </html>`;
