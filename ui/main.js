@@ -31,3 +31,13 @@ function moveRight () {
     mLeft = mLeft + 5;
     img.style.marginLeft = mLeft + "px";
 }
+
+var button = document.getElementById('counter');
+onclick.button = function () {
+   
+   counter += 1;
+   var spanTxt = document.getElementById('count');
+   spanTxt.innerHTML = counter.toString();
+
+
+}
