@@ -1,7 +1,33 @@
-var madimover = get.ElementbyId("madi");
-madimover = Onclick( moveRight() );
-function moveRight() {
-    
-    madimover.style.margin = "0 100px";
-    return true;
+var element = document.getElementById('main-text');
+
+element.innerHTML = 'This is a new text which is changed';
+
+var img = document.getElementById('madi');
+img.onclick = function () { 
+    if (img.style.marginLeft === "100px" )
+    {
+        img.style.marginLeft = "0";
+    }
+else
+    {
+        img.style.marginLeft = "100px";
+    }
+}
+
+var mLeft = 0;
+img.ondblclick = function () {
+    // img.style.marginLeft = "0";
+    var Interval = setInterval(moveRight, 1000);
+// 
+// 
+//     for ( var i = 0; i > 300; i++) {
+//         console.log (i);
+//         ml = i + "px";
+//         img.style.marginLeft = ml;
+//    }
+
+}
+function moveRight () {
+    mLeft = mLeft + 5;
+    img.style.marginLeft = mLeft + "px";
 }
