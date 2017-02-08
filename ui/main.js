@@ -33,12 +33,31 @@
 // }
 // 
 var button = document.getElementById('counter');
-var counter = 0 ;
+
 button.onclick = function () {
+    
+    // Get a Response ready for XML
+    
+    var request = new XMLHttpRequest();
+
+    // get the response in a variable
+    request.onreadystatechange = function () {
+        
+        // Take some action
+        if (request.readyState === XMLHttpRequest.DONE) {
+              
+        }
+        
+        if (request.status === 200) {
+              
+                var count1 = request.responseText;
+              
+              var spanTxt = document.getElementById('count');
+                  spanTxt.innerHTML = count1.toString();
+        }
+    }
    
-   counter += 1;
-   var spanTxt = document.getElementById('count');
-   spanTxt.innerHTML = counter.toString();
-
-
+    // get the counter from the already created counter file:
+    request.open('GET', '/counter', true);
+    request.send(null);
 }

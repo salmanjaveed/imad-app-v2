@@ -1,32 +1,52 @@
 <!doctype html>
 <html>
-    <head>
-        <link href="/ui/style.css" rel="stylesheet" />
-    </head>
-    <body>
-        <div class="container">
 
-            <div class="container2">
-                <div align="CENTER">
-                    <img id="profile-pic" src="https://pbs.twimg.com/profile_images/3460391645/c88c795797b91559d16855dd468f9e6c.jpeg" class="img-medium" style="border-radius:50%"/>
-                </div>
+<head>
+    <link href="/ui/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+   
+        <div class="img-medium">
+            <div align="CENTER">
+                <img id="profile-pic" class="img-medium" src="https://pbs.twimg.com/profile_images/3460391645/c88c795797b91559d16855dd468f9e6c.jpeg"
+                />
             </div>
+        </div>
 
-           <div class="container2">
+        <!-- -->
+        <div class="container2">
+            <button type="button" class="btn step-btn" data-toggle="collapse" data-target="#personal" style="width:100%;"> Personal </button>
+            <div id="personal" class="collapse panel">
                 <h2>Personal</h2>
                 <p>Hi, I am Salman</p>
             </div>
-            
-           <div class="container2">
+            <button type="button" class="btn step-btn" data-toggle="collapse" data-target="#professional" style="width:100%;"> Professional </button>
+            <div id="professional" class="collapse">
                 <h2>Professional</h2>
-                    <p>I am an entrepreneur</p>
-           </div>
-            <div class="linker-div">
-                This <button id="counter"> Counter Button </button> was clicked <span id="count">0</span> Times!
+                <p>I am an entrepreneur</p>
             </div>
-           
-            <script type="text/javascript" src="/ui/main.js">
-            </script>
+            <button type="button" class="btn step-btn" data-toggle="collapse" data-target="#counter-pane" style="width:100%;"> Counter </button>
+            <div class="collapse" id="counter-pane" style="width:100%;">
+                This <button id="counter"> Counter</button> was clicked <span id="count">0</span> Times!
+                <hr />
+                <input type="text" id="txtName" placeholder="Enter Name">
+                <input type="button" id="btnSubmit" value="Submit">
+                <ul id="listNames">
+                    <li>name1</li>
+                    <li>name2</li>
+                    <li>name3</li>
+                    <li>name4</li>
+                </ul>
+            </div>
         </div>
-    </body>
+        <script type="text/javascript" src="/ui/main.js">
+        </script>
+    </div> 
+</body>
+
 </html> 
