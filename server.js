@@ -91,10 +91,22 @@ app.get('/counter', function (req, res) {
     res.send(counter.toString()); 
 });
 
+var names = [];
+var comments = [];
+app.get('/comment', function (req, res) {
+    
+    var name = req.query.name;
+    var comment = req.query.comment;
+    names.push(name);
+    comments.push(comment);
+    res.send(JSON.stringify(comments)); 
+ //   res.send({'comment': JSON.stringify(comments), 'name': JSON.stringify(names)});
+});
+
+
 app.get('/:articleName', function (req, res) {
  var articleName = req.params.articleName;
  res.send(createTemplate(articles[articleName]));
-//  res.send(articles['article-one']);
 });
 
 app.get('/ui/style.css', function (req, res) {
