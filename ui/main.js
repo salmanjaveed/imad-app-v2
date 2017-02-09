@@ -105,4 +105,4 @@ submitBtn.onclick = function () {
     // get the counter from the already created counter file:
     request.open('GET', '/comment?comment=' + txtcomment + '&name=' + txtname, true);
     request.send(null);
-};
+}; 
