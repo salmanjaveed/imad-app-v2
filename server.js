@@ -103,7 +103,7 @@ app.get('/comment', function (req, res) {
  //   res.send({'comment': JSON.stringify(comments), 'name': JSON.stringify(names)});
 });
 
-
+ 
 app.get('/:articleName', function (req, res) {
  var articleName = req.params.articleName;
  res.send(createTemplate(articles[articleName]));
