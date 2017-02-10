@@ -32,9 +32,11 @@
 //     img.style.marginLeft = mLeft + "px";
 // }
 // 
-var button = document.getElementById('counter');
+ function displayCounter () {
 
-button.onclick = function () {
+// var button = document.getElementById('counter');
+
+// button.onclick = function () {
 
     // Get a Response ready for XML
 
@@ -60,18 +62,18 @@ button.onclick = function () {
     // get the counter from the already created counter file:
     request.open('GET', '/counter', true);
     request.send(null);
+    return true;
 };
 
-var submitBtn = document.getElementById('btnSubmit');
+ function displayComments () {
+// var submitBtn = document.getElementById('btnSubmit');
 
-submitBtn.onclick = function () {
+// submitBtn.onclick = function () {
 
     var nameinput = document.getElementById('txtName');
     txtname = nameinput.value;
     var commentinput = document.getElementById('txtComment');
     txtcomment = commentinput.value;
-
-
 
     // Get a Response ready for XML
 
@@ -105,4 +107,5 @@ submitBtn.onclick = function () {
     // get the counter from the already created counter file:
     request.open('GET', '/comment?comment=' + txtcomment + '&name=' + txtname, true);
     request.send(null);
-}; 
+    return true;
+};
