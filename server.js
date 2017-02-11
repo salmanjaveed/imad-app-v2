@@ -85,6 +85,13 @@ function createTemplate(data) {
     return htmlTemplate;
 }
 
+
+
+app.get('/aa', function (req, res) {
+  res.send(req.baseUrl+" <br> "+req.body+" <br> "+req.cookies+" <br> "+req.fresh+" <br> "+req.hostname+" <br> "+req.ip+" <br> "+req.ips+" <br> "+req.originalUrl+" <br> "+req.params+" <br> "+req.path+" <br> "+req.protocol+" <br> "+req.query+" <br> "+req.route+" <br> "+req.secure+" <br> "+req.signedCookies+" <br> "+req.stale+" <br> "+req.subdomains+" <br> "+req.xhr+" <br> ");
+});
+
+
 var counter = 0;
 app.get('/counter', function (req, res) {
     counter = counter +  1;
