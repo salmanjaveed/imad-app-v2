@@ -75,6 +75,15 @@
     var commentinput = document.getElementById('txtComment');
     txtcomment = commentinput.value;
 
+    if (txtname == '' ) {
+        return true;
+    }
+    else if(txtcomment == '') {
+        return true;
+    }
+    
+    displayCounter();
+
     // Get a Response ready for XML
 
     var request = new XMLHttpRequest();
