@@ -102,7 +102,7 @@
             var comments = JSON.parse(request.responseText);
 
             var list = '';
-            for (var i=comments.length; i>-1; i--) {
+            for (var i=comments.length-1; i>-1; i--) {
                 list += '<li class="list-group-item">' + comments[i] + '</li>';
             }
 
