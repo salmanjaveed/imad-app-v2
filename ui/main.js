@@ -81,7 +81,7 @@
     else if(txtcomment == '') {
         return true;
     }
-    
+
     displayCounter();
 
     // Get a Response ready for XML
@@ -102,7 +102,7 @@
             var comments = JSON.parse(request.responseText);
 
             var list = '';
-            for (var i=comments.length; i>0; i--) {
+            for (var i=comments.length; i>-1; i--) {
                 list += '<li class="list-group-item">' + comments[i] + '</li>';
             }
 
