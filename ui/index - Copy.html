@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="/ui/style.css" rel="stylesheet" />
     <script type="text/javascript" src="/ui/main.js"></script>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 </head>
 
 <body>
@@ -60,7 +59,6 @@
                     <ul class="submenu">
                         <li>
                             <a href="#">
-                                <span class="tags">xBases</span>
                                 <span class="tags">Inkscape</span>
                                 <span class="tags">Gimp</span>
                                 <span class="tags">CSS/3</span>
@@ -77,7 +75,7 @@
                         </a>
                     </ul>
                 </li>
-   <!--             <li>
+                <li>
                     <div class="link">
                         <i class="fa fa-picture-o"></i>Photos <small>1,120</small>
                         <i class="fa fa-chevron-down"></i>
@@ -96,28 +94,25 @@
         		</a>
                         </li>
                     </ul>
-                </li> -->
+                </li>
                 <li>
                     <div class="link" id="counter" onclick="displayCounter()">
                         <i class="fa fa-users"></i>Friends Comments <small><span id="count">0</span></small>
                         <i class="fa fa-chevron-down"></i>
                     </div>
                     <ul class="submenu">
-                        <li >
+                        <li class="photosfriends">
                             <input type="text" id="txtName" placeholder="Enter Name" class="form-control" value="Name">
                             <textarea class="form-control" id="txtComment" placeholder="Your Comments">Comments</textarea>
                             <!--   <input type="button" id="btnSubmit" value="Submit" onclick = "displayComments()"> -->
                         <!--    <div class="username"> -->
-                                <a href="#" class="btn" onclick="displayComments()">
-                                    <span class="fa fa-paper-plane"> Submit</span>  </a>
+                                <a href="#" class="btn-o" onclick="displayComments()">
+                                    <i class="fa fa-paper-plane"></i> Submit </a>
                        <!--     </div> -->
                         </li>
-                        <li>
-                            <ul class="list-group" id="listNames">
-                            </ul>
-                        </li>
                     </ul>
-                    
+                    <ul class="list-group" id="listNames">
+                    </ul>
                 </li>
             </ul>
         </div>

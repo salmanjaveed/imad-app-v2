@@ -104,6 +104,7 @@ app.get('/comment', function (req, res) {
     
     var name = req.query.name;
     var comment = req.query.comment;
+    comment = '<strong>' +  name + '</strong>' + ' says :' + comment;
     names.push(name);
     comments.push(comment);
     res.send(JSON.stringify(comments)); 
