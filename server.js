@@ -130,7 +130,7 @@ app.get('/ui/main.js', function (req, res) {
 });
 
 app.get('/favicon.ico', function (req, res) {
-  res.send('');
+  res.sendFile(path.join(__dirname, '/', 'favicon.ico'));
 });
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
