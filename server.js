@@ -8,7 +8,7 @@ app.use(morgan('combined'));
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-
+ 
 var articles = {
     'article-one': { title: 'This is the first title 1/3 in a series',
                 heading: 'This is the first heading 1/3 in a series',
