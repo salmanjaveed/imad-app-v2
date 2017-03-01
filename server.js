@@ -121,11 +121,11 @@ app.get('/comment', function (req, res) {
 });
 
 
-var Pool = New Pool(Config);
+var Pool = new Pool(Config);
 
 app.get('/db-test', function (req, res) {
  Pool.query( "SELECT * FROM test", function( err, result) {
-     if err(){
+     if (err) {
          res.statust(500).send(err.toString());
      }
      else {
