@@ -123,13 +123,20 @@ app.get('/comment', function (req, res) {
 
 
 var pool = new Pool(config);
-app.get('/db-test', function (req, res) {
- pool.query( "SELECT * FROM test", function( err, result) {
+app.get('/articles/:articlename', function (req, res) {
+ pool.query( "SELECT * FROM article WHERE title = '" + req.params.articlename +"'", function( err, result) {
      if (err) {
          res.statust(500).send(err.toString());
      }
      else {
-         res.send(JSON.stringify(result.rows));
+         if (result.rows.length === 0)
+         {
+             res.status(404).send('Article Not Found!!!');
+         }
+         else {
+             
+             res.send(createTemplate(articles[result.rows[0]]));
+         }
      }
  });
 });
