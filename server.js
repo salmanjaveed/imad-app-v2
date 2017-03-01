@@ -119,7 +119,7 @@ app.get('/comment', function (req, res) {
     res.send(JSON.stringify(comments)); 
  //   res.send({'comment': JSON.stringify(comments), 'name': JSON.stringify(names)});
 });
-
+/*
 
 var Pool = new Pool(Config);
 
@@ -133,7 +133,7 @@ app.get('/db-test', function (req, res) {
      }
  });
 });
-
+*/
 
 app.get('/:articleName', function (req, res) {
  var articleName = req.params.articleName;
