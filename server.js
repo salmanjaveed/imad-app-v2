@@ -135,7 +135,7 @@ app.get('/articles/:articlename', function (req, res) {
          }
          else {
              
-             res.send(createTemplate(articles[result.rows[0]]));
+             res.send(createTemplate(result.rows[0]));
          }
      }
  });
