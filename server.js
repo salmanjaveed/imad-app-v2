@@ -1,6 +1,15 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
+var pool = require('pg').Pool;
+
+var config = {
+    user: "salmanjaveed",
+    host: "localhost",
+    database: "salmanjaveed",
+    port: "5432",
+    password: process.env.DB_PASSWORD
+}
 
 var app = express();
 app.use(morgan('combined'));
@@ -112,6 +121,19 @@ app.get('/comment', function (req, res) {
 });
 
 
+var Pool = New Pool(Config);
+app.get('/db-test', function (req, res) {
+ Pool.query( "SELECT * FROM test", function( err, result) {
+     if err(){
+         res.statust(500).send(err.toString());
+     }
+     else {
+         res.send(JSON.stringify(result.rows));
+     }
+ });
+});
+
+
 app.get('/:articleName', function (req, res) {
  var articleName = req.params.articleName;
  res.send(createTemplate(articles[articleName]));
@@ -135,5 +157,5 @@ app.get('/favicon.ico', function (req, res) {
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(process.env.PORT || 8080, function () {
-  console.log(`IMAD course app listening on port ${process.env.PORT || 8080}!`);
+  console.log(`IMAD course app listening on port ${port} || 8080}!`);
 });
