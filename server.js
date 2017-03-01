@@ -122,9 +122,9 @@ app.get('/comment', function (req, res) {
 
 
 
-var Pool = new Pool(config);
+var pool = new Pool(config);
 app.get('/db-test', function (req, res) {
- Pool.query( "SELECT * FROM test", function( err, result) {
+ pool.query( "SELECT * FROM test", function( err, result) {
      if (err) {
          res.statust(500).send(err.toString());
      }
