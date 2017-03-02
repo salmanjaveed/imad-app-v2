@@ -1,6 +1,15 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
+var Pool = require('pg').Pool;
+
+var config = {
+    user: "salmanjaveed",
+    host: "db.imad.hasura-app.io",
+    database: "salmanjaveed",
+    port: "5432",
+    password: process.env.DB_PASSWORD
+}
 
 var app = express();
 app.use(morgan('combined'));
@@ -8,7 +17,7 @@ app.use(morgan('combined'));
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-
+ 
 var articles = {
     'article-one': { title: 'This is the first title 1/3 in a series',
                 heading: 'This is the first heading 1/3 in a series',
@@ -86,11 +95,11 @@ function createTemplate(data) {
 }
 
 
-
+/*
 app.get('/aa', function (req, res) {
   res.send(req.baseUrl+" <br> "+req.body+" <br> "+req.cookies+" <br> "+req.fresh+" <br> "+req.hostname+" <br> "+req.ip+" <br> "+req.ips+" <br> "+req.originalUrl+" <br> "+req.params+" <br> "+req.path+" <br> "+req.protocol+" <br> "+req.query+" <br> "+req.route+" <br> "+req.secure+" <br> "+req.signedCookies+" <br> "+req.stale+" <br> "+req.subdomains+" <br> "+req.xhr+" <br> ");
 });
-
+*/
 
 var counter = 0;
 app.get('/counter', function (req, res) {
@@ -112,11 +121,32 @@ app.get('/comment', function (req, res) {
 });
 
 
+
+var pool = new Pool(config);
+app.get('/articles/:articlename', function (req, res) {
+ pool.query( "SELECT * FROM article WHERE title = '" + req.params.articlename +"'", function( err, result) {
+     if (err) {
+         res.status(500).send(err.toString());
+     }
+     else {
+         if (result.rows.length === 0)
+         {
+             res.status(404).send('Article Not Found!!!');
+         }
+         else {
+             
+             res.send(createTemplate(result.rows[0]));
+         }
+     }
+ });
+});
+
+/*
 app.get('/:articleName', function (req, res) {
  var articleName = req.params.articleName;
  res.send(createTemplate(articles[articleName]));
 });
-
+*/
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
@@ -133,7 +163,7 @@ app.get('/favicon.ico', function (req, res) {
   res.sendFile(path.join(__dirname, '/', 'favicon.ico'));
 });
 
-var port = 5000; // Use 8080 for local development because you might already have apache running on 80
-app.listen(process.env.PORT || 5000, function () {
-  console.log(`IMAD course app listening on port ${process.env.PORT || 5000}!`);
+var port = 8080; // Use 8080 for local development because you might already have apache running on 80
+app.listen(process.env.PORT || 8080, function () {
+  console.log(`IMAD course app listening on port ${port} || 8080}!`);
 });

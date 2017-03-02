@@ -13,7 +13,7 @@
 //         img.style.marginLeft = "100px";
 //     }
 // }
-// 
+//  
 // var mLeft = 0;
 // img.ondblclick = function () {
 //     // img.style.marginLeft = "0";
