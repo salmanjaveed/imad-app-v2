@@ -168,6 +168,17 @@ app.get('/favicon.ico', function (req, res) {
   res.sendFile(path.join(__dirname, '/', 'favicon.ico'));
 });
 
+function hash(input, salt) {
+    var hashed = crypto.pbkdf25sync(input, salt, 10000, 512, 'sha512');
+    return (hashed.toString('hex'));
+}
+
+app.get('/hash/:input', function(req, res) {
+    var hashedString = hash(req.params.input, "Salman's App is working with hash");
+    res.send(hashedString);
+});
+
+
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(process.env.PORT || 8080, function () {
   console.log(`IMAD course app listening on port ${port} || 8080}!`);
