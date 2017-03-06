@@ -170,20 +170,39 @@ app.get('/favicon.ico', function (req, res) {
 function hash(input, salt) {
     var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
     var returnString = `
-    <table style="width: 100%; word-wrap: break-word;"> 
-    <tr>
-    <th>Function</th>
-    <th>Salt Used</th>
-    <th>Iterations</th>
-    <th>Hash String</th>
-    </tr>
-    <tr>
-    <td>phkdf2Sync</td>
-    <td>${salt}</td>
-    <td>10000</td>
-    <td>` + hashed.toString("hex") + `</td>
-    </tr>
-    </table>`;
+    <table border="0" align="center" cellpadding="5" cellspacing="0" style="border-collapse:collapse;border:1px dotted #8c0400;font-family:arial,helvetica,sans-serif;"><tbody><tr><td style="background-color:#ffe8ee;">
+
+Function
+
+</td><td>
+
+pbdkf2Sync
+
+</td></tr><tr><td style="background-color:#ffe8ee;">
+
+Salt Used
+
+</td><td>
+
+${salt}
+
+</td></tr><tr><td style="background-color:#ffe8ee;">
+
+Iterations
+
+</td><td>
+
+10000
+
+</td></tr><tr><td style="background-color:#ffe8ee;">
+
+Hash String
+
+</td><td>` + 
+
+hashed.toString("hex") + `
+
+</td></tr></tbody></table> `;
     
     return (returnString);
   //return ['pbkdf2Sync', salt, "10000", (hashed.toString('hex'))].join('&');
