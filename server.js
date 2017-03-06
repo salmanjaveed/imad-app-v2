@@ -125,8 +125,6 @@ app.get('/comment', function (req, res) {
  //   res.send({'comment': JSON.stringify(comments), 'name': JSON.stringify(names)});
 });
 
-
-
 var pool = new Pool(config);
 app.get('/articles/:articlename', function (req, res) {
  pool.query( "SELECT * FROM article WHERE title = '" + req.params.articlename +"'", function( err, result) {
@@ -152,6 +150,7 @@ app.get('/:articleName', function (req, res) {
  res.send(createTemplate(articles[articleName]));
 });
 */
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
