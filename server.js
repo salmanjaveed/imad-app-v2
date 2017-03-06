@@ -169,23 +169,10 @@ app.get('/favicon.ico', function (req, res) {
 
 function hash(input, salt) {
     var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
-    var returnString = "
-    <table>
-      <tr>
-        <th>Function</th>
-        <th>Salt Used</th>
-        <th>Iterations</th>
-        <th>Hash String</th>
-      </tr>
-      <tr>
-        <td>phkdf2Sync</td>
-        <td>${salt}</td>
-        <td>10000</td>
-        <td>" + hashed.toString('hex') + "</td>
-        </tr>
-    </table>";
-        
-  return ['pbkdf2Sync', salt, "10000", (hashed.toString('hex'))].join('&');
+    var returnString = '<table> <tr><th>Function</th><th>Salt Used</th><th>Iterations</th><th>Hash String</th></tr><tr><td>phkdf2Sync</td><td>${salt}</td><td>10000</td><td>' + hashed.toString("hex") + '</td></tr></table>';
+    
+    return (returnString);
+  //return ['pbkdf2Sync', salt, "10000", (hashed.toString('hex'))].join('&');
 }
 
 app.get('/hash/:input', function(req, res) {
