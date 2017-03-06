@@ -170,7 +170,7 @@ app.get('/favicon.ico', function (req, res) {
 function hash(input, salt) {
     var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
     var returnString = `
-    <table border="0" align="center" cellpadding="5" cellspacing="0" style="border-collapse:collapse;border:1px dotted #8c0400;font-family:arial,helvetica,sans-serif;"><tbody><tr><td style="background-color:#ffe8ee;">
+    <table width="300px" border="0" align="center" cellpadding="5" cellspacing="0" style="border-collapse:collapse;border:1px dotted #8c0400;font-family:arial,helvetica,sans-serif;"><tbody><tr><td style="background-color:#ffe8ee;">
 
 Function
 
