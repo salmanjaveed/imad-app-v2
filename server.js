@@ -198,9 +198,9 @@ Iterations
 
 Hash String
 
-</td><td>` + 
+</td><td> <div style="word-wrap: break-word;">` + 
 
-hashed.toString("hex") + `
+hashed.toString("hex") + `</div>
 
 </td></tr></tbody></table> `;
     
