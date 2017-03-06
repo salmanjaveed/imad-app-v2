@@ -174,7 +174,7 @@ function hash(input, salt) {
 
 app.get('/hash/:input', function(req, res) {
     var hashedString = hash(req.params.input, "Salmans-App-is-working-with-hash");
-    res.send(hashedString);
+    res.send('<div style="word=wrap: break-word;">' + hashedString +'</div>');
 });
 
 
