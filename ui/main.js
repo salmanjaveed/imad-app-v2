@@ -175,3 +175,4 @@ function loadLoginForm () {
         submit.value = 'Logging in...';
         
     };
+}
