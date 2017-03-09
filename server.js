@@ -227,7 +227,7 @@ app.get('/logout', function (req, res) {
    res.send('<html><body>Logged out!<br/><br/><a href="/">Back to home</a></body></html>');
 });
 
-
+/*
 app.post('/login', function (req, res) {
    var username = req.body.username;
    var password = req.body.password;
@@ -260,7 +260,7 @@ app.post('/login', function (req, res) {
       };
    });
 });
-
+*/
 var pool = new Pool(config);
 
 app.get('/get-articles', function (req, res) {
