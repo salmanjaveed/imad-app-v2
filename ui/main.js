@@ -57,13 +57,13 @@
             var spanTxt = document.getElementById('count');
             spanTxt.innerHTML = count1.toString();
         }
-    }
+    };
 
     // get the counter from the already created counter file:
     request.open('GET', '/counter', true);
     request.send(null);
     return true;
-};
+}
 
  function displayComments () {
 // var submitBtn = document.getElementById('btnSubmit');
@@ -75,10 +75,10 @@
     var commentinput = document.getElementById('txtComment');
     txtcomment = commentinput.value;
 
-    if (txtname == '' ) {
+    if (txtname === '' ) {
         return true;
     }
-    else if(txtcomment == '') {
+    else if(txtcomment === '') {
         return true;
     }
 
@@ -112,12 +112,12 @@
             ulList.innerHTML = list;
           }
          }
-    }
+    };
     // get the counter from the already created counter file:
     request.open('GET', '/comment?comment=' + txtcomment + '&name=' + txtname, true);
     request.send(null);
     return true;
-};
+}
 
 
 /**************************************************************************
