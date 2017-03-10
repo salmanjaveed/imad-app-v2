@@ -126,7 +126,6 @@
 * forked from coco98
 *
 **************************************************************************/
-
 function loadLoginForm () {
     var loginHtml = `
         <h3>Login/Register to unlock awesome features</h3>
@@ -149,7 +148,7 @@ function loadLoginForm () {
           if (request.readyState === XMLHttpRequest.DONE) {
               // Take some action
               if (request.status === 200) {
-                  submit.value = 'Sucess!';
+                  submit.value = 'Success!';
               } else if (request.status === 403) {
                   submit.value = 'Invalid credentials. Try again?';
               } else if (request.status === 500) {
@@ -202,7 +201,7 @@ function loadLoginForm () {
         console.log(password);
         request.open('POST', '/create-user', true);
         request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({username: username, password: password}));  
+                request.send(JSON.stringify({username: username, password: password}));  
         register.value = 'Registering...';
     
     };
@@ -229,7 +228,7 @@ function loadLogin () {
         }
     };
     
-    request.open('GET', '/checklogin', true);
+    request.open('GET', '/check-login', true);
     request.send(null);
 }
 
@@ -247,12 +246,12 @@ function loadArticles () {
                     <a href="/articles/${articleData[i].title}">${articleData[i].heading}</a>
                     (${articleData[i].date.split('T')[0]})</li>`;
                 }
-                content += `</ul>`;
+                content += "</ul>";
                 articles.innerHTML = content;
             } else {
                 articles.innerHTML('Oops! Could not load all articles!');
             }
-        };
+        }
     };
     
     request.open('GET', '/get-articles', true);
