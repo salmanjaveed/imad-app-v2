@@ -62,7 +62,7 @@ function createTemplate(data) {
     return htmlTemplate;
 }
 
-
+/*
 
 var counter = 0;
 app.get('/counter', function (req, res) {
@@ -101,6 +101,7 @@ app.get('/articles/:articlename', function (req, res) {
      }
  });
 });
+*/
 
 /*
 app.get('/:articleName', function (req, res) {
