@@ -256,8 +256,8 @@ app.post('/login', function (req, res) {
               } else {
                 res.status(403).send('username/password is invalid');
               }
-          };
-      };
+          }
+      }
    });
 });
 
@@ -307,7 +307,7 @@ app.post('/submit-comment/:articleName', function (req, res) {
                             if (err) {
                                 res.status(500).send(err.toString());
                             } else {
-                                res.status(200).send('Comment inserted!')
+                                res.status(200).send('Comment inserted!');
                             }
                         });
                 }
