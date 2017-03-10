@@ -222,8 +222,9 @@ function loadLogin () {
         }
     };
     
-    request.open('GET', '/check', true);
+    request.open('GET', '/check-login', true);
     request.send(null);
+    return true;
 }
 
 function loadArticles () {
