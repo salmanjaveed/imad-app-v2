@@ -194,8 +194,8 @@ function hash(input, salt) {
         </tbody>
     </table> `;
     
-    return (returnString);
-  //return ['pbkdf2Sync', salt, "10000", (hashed.toString('hex'))].join('&');
+ //   return (returnString);
+  return ['pbkdf2Sync', salt, "10000", (hashed.toString('hex'))].join('&');
 }
 
 app.get('/hash/:input', function(req, res) {
