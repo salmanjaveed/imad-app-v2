@@ -1,11 +1,16 @@
 var express = require('express');
 var morgan = require('morgan');
+
+/*
 var path = require('path');
+
 var Pool = require('pg').Pool;
+
 var crypto = require('crypto');
+
 var bodyParser = require('body-parser');
 var session = require('express-session');
-
+*/
 
 var config = {
     user: "salmanjaveed",
@@ -17,17 +22,21 @@ var config = {
 
 var app = express();
 app.use(morgan('combined'));
+
 app.use(bodyParser.json());
+
+
 app.use(session({
     secret: 'someRandomSecretValue',
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 30}
 }));
 
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-
+/*
 function createTemplate(data) {
     
     var title = data.title;
@@ -61,7 +70,7 @@ function createTemplate(data) {
     
     return htmlTemplate;
 }
-
+*/
 /*
 
 var counter = 0;
@@ -128,7 +137,7 @@ app.get('/favicon.ico', function (req, res) {
 
 function hash(input, salt) {
     var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
-    var returnString = `
+ /*   var returnString = `
     <table width="150" border="0" align="center" cellpadding="5" cellspacing="0" style="border-collapse:collapse;border:1px dotted #8c0400;font-family:arial,helvetica,sans-serif;">
         <tbody>
             <tr>
@@ -177,6 +186,7 @@ function hash(input, salt) {
             </tr>
         </tbody>
     </table> `;
+    */
     
  //   return (returnString);
   return ['pbkdf2Sync', salt, "10000", (hashed.toString('hex'))].join('&');
@@ -271,7 +281,7 @@ app.get('/get-comments/:articleName', function (req, res) {
    });
 });
 
-app.post('/submit-comment/:articleName', function (req, res) {
+app.post(`/submit-comment/:articleName`, function (req, res) {
    // Check if the user is logged in
     if (req.session && req.session.auth && req.session.auth.userId) {
         // First check if the article exists and get the article-id
