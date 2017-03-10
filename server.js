@@ -1,7 +1,6 @@
 var express = require('express');
 var morgan = require('morgan');
 
-/*
 var path = require('path');
 
 var Pool = require('pg').Pool;
@@ -10,7 +9,7 @@ var crypto = require('crypto');
 
 var bodyParser = require('body-parser');
 var session = require('express-session');
-*/
+
 
 var config = {
     user: "salmanjaveed",
@@ -196,6 +195,22 @@ app.get('/hash/:input', function(req, res) {
     var hashedString = hash(req.params.input, "Salmans-App-is-working-with-hash");
     res.send(hashedString);
 });
+
+app.get('/check-login', function (req, res) {
+   if (req.session && req.session.auth && req.session.auth.userId) {
+       // Load the user object
+       pool.query('SELECT * FROM "user" WHERE id = $1', [req.session.auth.userId], function (err, result) {
+           if (err) {
+              res.status(500).send(err.toString());
+           } else {
+              res.send(result.rows[0].username);    
+           }
+       });
+   } else {
+       res.status(400).send('You are not logged in');
+   }
+});
+
 
 //Create user function 
 app.post('/create-user', function (req, res) {
