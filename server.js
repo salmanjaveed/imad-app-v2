@@ -1,6 +1,6 @@
 var express = require('express');
 var morgan = require('morgan');
-
+/*
 var path = require('path');
 
 var Pool = require('pg').Pool;
@@ -10,7 +10,7 @@ var crypto = require('crypto');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
-
+*/
 var config = {
     user: "salmanjaveed",
     host: "db.imad.hasura-app.io",
@@ -34,8 +34,8 @@ app.use(session({
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-
 /*
+
 function createTemplate(data) {
     
     var title = data.title;
@@ -195,7 +195,7 @@ app.get('/hash/:input', function(req, res) {
     var hashedString = hash(req.params.input, "Salmans-App-is-working-with-hash");
     res.send(hashedString);
 });
-
+/*
 app.get('/check-login', function (req, res) {
    if (req.session && req.session.auth && req.session.auth.userId) {
        // Load the user object
@@ -210,7 +210,7 @@ app.get('/check-login', function (req, res) {
        res.status(400).send('You are not logged in');
    }
 });
-
+*/
 
 //Create user function 
 app.post('/create-user', function (req, res) {
