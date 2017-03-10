@@ -36,7 +36,7 @@ app.use(session({ secret: 'someRandomSecretValuet', cookie: { maxAge: 60000 }, r
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-/*
+
 
 function createTemplate(data) {
     
@@ -71,7 +71,7 @@ function createTemplate(data) {
     
     return htmlTemplate;
 }
-*/
+
 /*
 
 var counter = 0;
@@ -197,7 +197,7 @@ app.get('/hash/:input', function(req, res) {
     var hashedString = hash(req.params.input, "Salmans-App-is-working-with-hash");
     res.send(hashedString);
 });
-/*
+
 app.get('/check-login', function (req, res) {
    if (req.session && req.session.auth && req.session.auth.userId) {
        // Load the user object
@@ -212,7 +212,7 @@ app.get('/check-login', function (req, res) {
        res.status(400).send('You are not logged in');
    }
 });
-*/
+
 
 //Create user function 
 app.post('/create-user', function (req, res) {
