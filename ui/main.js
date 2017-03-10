@@ -32,6 +32,7 @@
 //     img.style.marginLeft = mLeft + "px";
 // }
 // 
+/*
  function displayCounter () {
 
 // var button = document.getElementById('counter');
@@ -64,6 +65,8 @@
     request.send(null);
     return true;
 }
+*/
+/*
 
  function displayComments () {
 // var submitBtn = document.getElementById('btnSubmit');
@@ -98,7 +101,8 @@
 
       /*     var returnvalue = request.responseText;
             var comments = JSON.parse(returnvalue['comment']);
-     */  
+     */ 
+     /*
             var comments = JSON.parse(request.responseText);
 
             var list = '';
