@@ -262,7 +262,7 @@ app.post('/login', function (req, res) {
 });
 
 
-app.get('/check-login', function (req, res) {
+app.get('/auth/check-login', function (req, res) {
     
    if (req.session && req.session.auth && req.session.auth.userId) {
     console.log(req.session, req.session.auth, req.session.auth.userId);
