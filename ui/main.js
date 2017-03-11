@@ -222,7 +222,7 @@ function loadLogin () {
         }
     };
     
-    request.open('GET', '/auth/loginer', true);
+    request.open('GET', '/auth/check-login', true);
     request.send(null);
     return true;
 }
