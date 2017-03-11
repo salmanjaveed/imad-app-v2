@@ -1,3 +1,4 @@
+/*
 // var element = document.getElementById('main-text');
 // 
 // element.innerHTML = 'This is a new text which is changed';
@@ -122,7 +123,7 @@
     request.send(null);
     return true;
 }
-
+*/
 
 /**************************************************************************
 *
@@ -205,26 +206,28 @@ function loadLoginForm () {
 }
 
 function loadLoggedInUser (username) {
-    var loginArea = document.getElementById('login_area');
-    loginArea.innerHTML = '        <h3> Hi <i>${username}</i></h3>        <a href="/logout">Logout</a>    ';
+    var loginArea = document.getElementById( 'login_area');
+    loginArea.innerHTML = `<h3> Hi <i>${username}</i></h3>
+        <a href="/logout">Logout</a>`
 }
 
 function loadLogin () {
-    // Check if the user is already logged in
+    //Check if the user is already logged in 
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 loadLoggedInUser(this.responseText);
-            } else {
+            }
+            else {
                 loadLoginForm();
             }
         }
     };
-    
-    request.open('GET', '/auth/check-login', true);
+
+    request.open('GET', '/auth/check-login',true);
     request.send(null);
-    return true;
+    
 }
 
 function loadArticles () {
