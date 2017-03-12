@@ -199,7 +199,7 @@ function hash(input, salt) {
     */
     
  //   return (returnString);
-  return ['pbkdf2Sync', salt, "10000", (hashed.toString('hex'))].join('&');
+  return ['pbkdf2Sync', salt, "10000", (hashed.toString('hex'))].join('$');
 }
 
 app.get('/hash/:input', function(req, res) {
@@ -285,7 +285,7 @@ app.post('/login', function (req, res) {
           } else {
               // Match the password
               var dbString = result.rows[0].password;
-              var salt = dbString.split('&')[2];
+              var salt = dbString.split('$')[2];
               var hashedPassword = hash(password, salt); // Creating a hash based on the password submitted and the original salt
               if (hashedPassword === dbString) {
                 
