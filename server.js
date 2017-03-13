@@ -73,7 +73,7 @@ var fs = require('fs'),
 
 //this is sync way
 var pagefile = fs.readFileSync(filePath, 'utf8');
-console.log(pagefile);
+//console.log(pagefile);
 
 
 function createTemplate(data) {
@@ -109,6 +109,7 @@ function createTemplate(data) {
  */
  
  var htmlTemplate = '`' + pagefile + '`';
+ console.log(htmlTemplate);
  
     return htmlTemplate;
 }
