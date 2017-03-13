@@ -474,31 +474,31 @@ app.get('/favicon.ico', function (req, res) {
 });
 
 app.get('css/default.css', function (req, res) {
-   res.sendFile(path.join(__dirname),'/css/','default.css')); 
+   res.sendFile(path.join(__dirname,'/css/','default.css')); 
 });
 
 app.get('css/media-queries.css', function (req, res) {
-   res.sendFile(path.join(__dirname),'/css/','media-queries.css')); 
+   res.sendFile(path.join(__dirname,'/css/','media-queries.css')); 
 });
 
 app.get('js/modernizr.js', function (req, res) {
-   res.sendFile(path.join(__dirname),'/js/','modernizr.js')); 
+   res.sendFile(path.join(__dirname,'/js/','modernizr.js')); 
 });
 
 app.get('css/layout.css', function (req, res) {
-   res.sendFile(path.join(__dirname),'/css/','layout.css')); 
+   res.sendFile(path.join(__dirname,'/css/','layout.css')); 
 });
 
 app.get('images/thumb.jpg', function (req, res) {
-   res.sendFile(path.join(__dirname),'/images/','thumb.jpg')); 
+   res.sendFile(path.join(__dirname,'/images/','thumb.jpg')); 
 });
 
 app.get('js/jquery-migrate-1.2.1.min.js', function (req, res) {
-   res.sendFile(path.join(__dirname),'/js/','jquery-migrate-1.2.1.min.js')); 
+   res.sendFile(path.join(__dirname,'/js/','jquery-migrate-1.2.1.min.js')); 
 });
 
 app.get('js/main.js', function (req, res) {
-   res.sendFile(path.join(__dirname),'/js/','main.js')); 
+   res.sendFile(path.join(__dirname,'/js/','main.js')); 
 });
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
