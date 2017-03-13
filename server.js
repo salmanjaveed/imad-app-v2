@@ -119,6 +119,7 @@ app.get('/comment', function (req, res) {
 });
 
 var pool = new Pool(config);
+
 app.get('/articles/:articlename', function (req, res) {
  pool.query( "SELECT * FROM article WHERE title = '" + req.params.articlename +"'", function( err, result) {
      if (err) {
