@@ -62,13 +62,26 @@ app.get('/auth/check-login', function (req, res) {
 });
 
 
+var fs = require('fs'),
+    filePath = './ui/page.html';
+
+// this for async way
+/*fs.readFile(filePath, 'utf8', function (err, data) {
+    if (err) throw err;
+    console.log(data);
+});*/
+
+//this is sync way
+var pagefile = fs.readFileSync(filePath, 'utf8');
+console.log(css);
+
 
 function createTemplate(data) {
     
     var title = data.title;
     var heading = data.heading;
     var content = data.content;
-        
+  /*      
     var htmlTemplate = `
     <html>
     <head>
@@ -93,7 +106,10 @@ function createTemplate(data) {
        
     </body>    
     </html>`;
-    
+ */
+ 
+ var htmlTemplate = '`' + pagefile + '`';
+ 
     return htmlTemplate;
 }
 
