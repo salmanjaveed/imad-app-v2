@@ -74,6 +74,7 @@ function createTemplate(data) {
     var heading = data.heading;
     var content = data.content;
     var date = data.date;
+    var username = data.username;
 /*
  var htmlTemplate = ` ${pagefile} `;
  console.log(htmlTemplate);
