@@ -473,31 +473,31 @@ app.get('/favicon.ico', function (req, res) {
   res.sendFile(path.join(__dirname, '/', 'favicon.ico'));
 });
 
-app.get('css/default.css', function (req, res) {
+app.get('/articles/css/default.css', function (req, res) {
    res.sendFile(path.join(__dirname,'/css/','default.css')); 
 });
 
-app.get('css/media-queries.css', function (req, res) {
+app.get('/articles/css/media-queries.css', function (req, res) {
    res.sendFile(path.join(__dirname,'/css/','media-queries.css')); 
 });
 
-app.get('js/modernizr.js', function (req, res) {
+app.get('/articles/js/modernizr.js', function (req, res) {
    res.sendFile(path.join(__dirname,'/js/','modernizr.js')); 
 });
 
-app.get('css/layout.css', function (req, res) {
+app.get('/articles/css/layout.css', function (req, res) {
    res.sendFile(path.join(__dirname,'/css/','layout.css')); 
 });
 
-app.get('images/thumb.jpg', function (req, res) {
+app.get('/articles/images/thumb.jpg', function (req, res) {
    res.sendFile(path.join(__dirname,'/images/','thumb.jpg')); 
 });
 
-app.get('js/jquery-migrate-1.2.1.min.js', function (req, res) {
+app.get('/articles/js/jquery-migrate-1.2.1.min.js', function (req, res) {
    res.sendFile(path.join(__dirname,'/js/','jquery-migrate-1.2.1.min.js')); 
 });
 
-app.get('js/main.js', function (req, res) {
+app.get('/articles/js/main.js', function (req, res) {
    res.sendFile(path.join(__dirname,'/js/','main.js')); 
 });
 
