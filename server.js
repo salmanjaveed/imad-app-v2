@@ -199,7 +199,7 @@ function hash(input, salt) {
     */
     
  //   return (returnString);
-  return ['pbkdf2Sync', salt, "10000", (hashed.toString('hex'))].join('$');
+  return ['pbkdf2Sync', "10000", salt,  (hashed.toString('hex'))].join('$');
 }
 
 app.get('/hash/:input', function(req, res) {
