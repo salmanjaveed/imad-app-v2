@@ -108,7 +108,7 @@ function createTemplate(data) {
     </html>`;
  */
  
- var htmlTemplate = '`' + pagefile + '`';
+ var htmlTemplate = ` ${pagefile} `;
  console.log(htmlTemplate);
  
     return htmlTemplate;
