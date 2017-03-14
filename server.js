@@ -505,8 +505,8 @@ app.get('/articles/css/fonts.css', function (req, res) {
    res.sendFile(path.join(__dirname,'css','fonts.css')); 
 });
 
-app.get('/articles/css/font-awesome.min.css', function (req, res) {
-   res.sendFile(path.join(__dirname,'css/font-awesome','font-awesome.min.css')); 
+app.get('/articles/css/font-awesome/css/font-awesome.min.css', function (req, res) {
+   res.sendFile(path.join(__dirname,'css/font-awesome/css','font-awesome.min.css')); 
 });
 
 app.get('/articles/css/img/header-content-bg.png', function (req, res) {
