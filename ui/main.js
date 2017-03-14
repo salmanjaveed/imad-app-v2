@@ -253,7 +253,7 @@ function loadArticles () {
 								<span class="meta-sep">&bull;</span>								
 								<!--<li><a href="#" title="" rel="category tag">Ghost</a></li>
 								<span class="meta-sep">&bull;</span>-->
-							<!--	<li>Username</li> -->
+								<li>${articleData[i].username}</li>
 							</ul>
 						</div>
                     `;
