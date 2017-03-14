@@ -73,10 +73,10 @@ function createTemplate(data) {
     var title = data.title;
     var heading = data.heading;
     var content = data.content;
-    var date = data.date;
+    var date = data.date.split("GMT")[0];
     var username = data.username;
 
- var htmlTemplate = ` ${pagefile.toString()} `;
+ var htmlTemplate = ` ${pagefile}.toString() `;
 
  /*
     var htmlTemplate = `
