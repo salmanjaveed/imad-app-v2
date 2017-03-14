@@ -321,6 +321,89 @@ app.get('/articles/css/fonts/opensans/OpenSans-Regular-webfont.ttf', function (r
 });
 
 
+app.get('/css/default.css', function (req, res) {
+   res.sendFile(path.join(__dirname,'css','default.css')); 
+});
+
+app.get('/css/media-queries.css', function (req, res) {
+   res.sendFile(path.join(__dirname,'css','media-queries.css')); 
+});
+
+app.get('/js/modernizr.js', function (req, res) {
+   res.sendFile(path.join(__dirname,'js','modernizr.js')); 
+}); 
+
+app.get('/css/layout.css', function (req, res) {
+   res.sendFile(path.join(__dirname,'css','layout.css')); 
+});
+
+app.get('/images/thumb.jpg', function (req, res) {
+   res.sendFile(path.join(__dirname,'images','thumb.jpg')); 
+});
+
+app.get('/js/jquery-migrate-1.2.1.min.js', function (req, res) {
+   res.sendFile(path.join(__dirname,'js','jquery-migrate-1.2.1.min.js')); 
+});
+
+app.get('/js/main.js', function (req, res) {
+   res.sendFile(path.join(__dirname,'js','main.js')); 
+});
+
+app.get('/css/fonts.css', function (req, res) {
+   res.sendFile(path.join(__dirname,'css','fonts.css')); 
+});
+
+app.get('/css/font-awesome/css/font-awesome.min.css', function (req, res) {
+   res.sendFile(path.join(__dirname,'css/font-awesome/css','font-awesome.min.css')); 
+});
+
+app.get('/css/img/header-content-bg.png', function (req, res) {
+   res.sendFile(path.join(__dirname,'css/img','header-content-bg.png')); 
+});
+
+app.get('/css/fonts/merriweather/merriweather-regular-webfont.woff', function (req, res) {
+   res.sendFile(path.join(__dirname,'css/fonts/merriweather','/merriweather-regular-webfont.woff')); 
+});
+
+app.get('/css/fonts/opensans/OpenSans-Regular-webfont.woff', function (req, res) {
+   res.sendFile(path.join(__dirname,'css/fonts/opensans','OpenSans-Regular-webfont.woff')); 
+});
+
+app.get('/css/fonts/opensans/OpenSans-Light-webfont.woff', function (req, res) {
+   res.sendFile(path.join(__dirname,'/css/fonts/opensans','OpenSans-Light-webfont.woff')); 
+});
+
+app.get('/css/font-awesome/fonts/fontawesome-webfont.woff', function (req, res) {
+   res.sendFile(path.join(__dirname,'css/font-awesome/fonts','fontawesome-webfont.woff')); 
+});
+
+app.get('/css/font-awesome/fonts/fontawesome-webfont.ttf', function (req, res) {
+   res.sendFile(path.join(__dirname,'css/font-awesome/fonts','fontawesome-webfont.ttf')); 
+});
+
+
+app.get('/css/fonts/opensans/OpenSans-Bold-webfont.woff', function (req, res) {
+   res.sendFile(path.join(__dirname,'/css/fonts/opensans','OpenSans-Bold-webfont.woff')); 
+});
+
+app.get('/css/fonts/opensans/OpenSans-Semibold-webfont.woff', function (req, res) {
+   res.sendFile(path.join(__dirname,'css/fonts/opensans','OpenSans-Semibold-webfont.woff')); 
+});
+
+app.get('/css/fonts/merriweather/merriweather-regular-webfont.ttf', function (req, res) {
+   res.sendFile(path.join(__dirname,'css/fonts/merriweather','merriweather-regular-webfont.ttf')); 
+});
+
+
+app.get('/css/fonts/opensans/OpenSans-Light-webfont.ttf', function (req, res) {
+   res.sendFile(path.join(__dirname,'css/fonts/opensans','OpenSans-Light-webfont.ttf')); 
+});
+
+app.get('/css/fonts/opensans/OpenSans-Regular-webfont.ttf', function (req, res) {
+   res.sendFile(path.join(__dirname,'css/fonts/opensans','OpenSans-Regular-webfont.ttf')); 
+});
+
+
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(process.env.PORT || 8080, function () {
   console.log(`IMAD course app listening on port ${port} || 8080}!`);
