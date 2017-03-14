@@ -260,7 +260,7 @@ function loadArticles () {
 						</div>
 					</header>
 						<div class="entry-content">
-						<p>${content}</p>
+						<p>${articleData[i].content}</p>
 					</div> 
                     `;
                     
