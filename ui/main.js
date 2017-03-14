@@ -267,7 +267,7 @@ function loadArticles () {
  /*               content += "</ul>"; */
                 articles.innerHTML = content; 
             } else {
-                alert(request.err);
+                alert(request.err.toString() + request.status.toString());
                 articles.innerHTML = 'Oops! Could not load all articles!';
             }
         }
