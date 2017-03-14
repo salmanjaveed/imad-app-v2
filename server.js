@@ -505,7 +505,7 @@ app.get('/articles/css/fonts.css', function (req, res) {
    res.sendFile(path.join(__dirname,'css','fonts.css')); 
 });
 
-app.get('/articles/cssfont-awesome.min.css', function (req, res) {
+app.get('/articles/css/font-awesome.min.css', function (req, res) {
    res.sendFile(path.join(__dirname,'css/font-awesome','font-awesome.min.css')); 
 });
 
