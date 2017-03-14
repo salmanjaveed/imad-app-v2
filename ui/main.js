@@ -241,10 +241,10 @@ function loadArticles () {
             if (request.status === 200) {
                 var content = ' ';
                 var articleData = JSON.parse(this.responseText);
-                console.log("articleData", articleData);
+                
                 for (var i=0; i< articleData.length; i++) {
                     content +=`
-                    
+                    <header class="entry-header">
 						<h2 class="entry-title">
 							<a href="/articles/${articleData[i].title}" title="${articleData[i].heading}"> ${articleData[i].heading}</a>
 						</h2> 				 
@@ -258,6 +258,7 @@ function loadArticles () {
 								<li>${articleData[i].username}</li>
 							</ul>
 						</div>
+					</header>
                     `;
                     
    /*                 content += `<li>  
