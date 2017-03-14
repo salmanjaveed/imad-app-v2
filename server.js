@@ -290,7 +290,7 @@ app.get('/articles/css/fonts/opensans/OpenSans-Light-webfont.woff', function (re
    res.sendFile(path.join(__dirname,'/css/fonts/opensans','OpenSans-Light-webfont.woff')); 
 });
 
-app.get('/articles/css/font-awesome/fonts/fontawesome-webfont.woff?v=4.0.3', function (req, res) {
+app.get('/articles/css/font-awesome/fonts/fontawesome-webfont.woff', function (req, res) {
    res.sendFile(path.join(__dirname,'css/font-awesome/fonts','fontawesome-webfont.woff')); 
 });
 
