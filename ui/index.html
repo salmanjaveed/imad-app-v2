@@ -1,179 +1,387 @@
-<!doctype html>
-<html>
-
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link href="/ui/style.css" rel="stylesheet" />
-    <script type="text/javascript" src="/ui/main.js"></script>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>IMAD 2017 - Blog Project by Salman Javeed</title>
+	<meta name="description" content="IMAD 2017 - Blog Project by Salman Javeed using Nodejs">  
+	<meta name="author" content="Salman Javeed">
+
+	<!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+   <!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/layout.css">  
+	<link rel="stylesheet" href="css/media-queries.css"> 
+
+   <!-- Script
+   ================================================== -->
+	<script src="js/modernizr.js"></script>
+
+   <!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="favicon.png" >
+
 </head>
- 
-<body > <!-- hiding the scroll bars or the box does not look nice -->
-    <div class="container">
-        <div class="row">
-            <h1>Profile <br><small>#IMAD #Profile</small></h1>
-            <!-- Contenedor -->
-            <ul id="accordion" class="accordion">
-                <li>
-                    <div class="col col_4 profile-pic">
-                        <img class="img-responsive profile-cont" alt="Salman Javeed - IMAD" src="/ui/prof-pic.jpg">
-                        <div class="edit-pic">
-                            <a href="https://web.facebook.com/salmanjaveed" target="_blank" class="fa fa-facebook"></a>
-                            <a href="https://www.instagram.com/" target="_blank" class="fa fa-instagram"></a>
-                            <a href="https://twitter.com/salmanjaveed" target="_blank" class="fa fa-twitter"></a>
-                            <a href="https://plus.google.com/" target="_blank" class="fa fa-google"></a>
-                        </div>
-                        <div class="username">
-                            <h2>Salman Javeed <small> <i class="fa fa-map-marker"></i> Chennai, India</small></h2>
-                            <p><i class="fa fa-briefcase"></i> Wannabe Mobile App Developer</p>
-                            <a href="https://web.facebook.com/salmanjaveed" target="_blank" class="btn-o"> <i class="fa fa-user-plus"></i> Add Friend </a>
-                            <a href="https://www.instagram.com/" target="_blank" class="btn-o"> <i class="fa fa-plus"></i> Follow </a>
-                            <ul class="nav navbar-nav">
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-ellipsis-v pull-right"></span></a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="#">Video Call <i class="fa fa-video-camera"></i></a></li>
-                                        <li><a href="#">Poke <i class="fa fa-hand-o-right"></i></a></li>
-                                        <li><a href="#">Report <i class="fa fa-bug"></i></a></li>
-                                        <li><a href="#">Block <i class="fa fa-lock"></i></a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="link"><i class="fa fa-globe"></i>About<i class="fa fa-chevron-down"></i></div>
-                    <ul class="submenu">
-                        <li><a href="#">Current Location : Chennai</a></li>
-                        <li><a href="#">Address : TamilNadu, INDIA</a></li>
-                        <li><a href="mailto:salmanjaveed@xyz.com">Email : salmanjaveed@xyz.com</a></li>
-                        <li><a href="#">Phone : +91 988x4x02xx</a></li>
-                    </ul>
-                </li>
-                <!--    <li class="default open"> -->
-                <li>
-                    <div class="link"><i class="fa fa-code"></i>Professional Skills<i class="fa fa-chevron-down"></i></div>
-                    <ul class="submenu">
-                        <li>
-                            <a href="#">
-                                <span class="tags">xBases</span>
-                                <span class="tags">Inkscape</span>
-                                <span class="tags">Gimp</span>
-                                <span class="tags">CSS/3</span>
-                                <span class="tags">Dreamweaver</span>
-                                <span class="tags">HTML/5</span>
-                                <span class="tags">PHP</span>
-                                <span class="tags">MS Office</span>
-                                <span class="tags">JavaScript</span>
-                                <span class="tags">Bootstrap</span>
-                                <span class="tags">eCommerce</span>
-                                <span class="tags">Mobile App Development</span>
-                                <span class="tags">Website Development</span>
-                             </a>
-                        </li>
-                       
-                    </ul>
-                </li>
-   <!--             <li>
-                    <div class="link">
-                        <i class="fa fa-picture-o"></i>Photos <small>1,120</small>
-                        <i class="fa fa-chevron-down"></i>
-                    </div>
-                    <ul class="submenu">
-                        <li class="photosfriends">
-                            <a href="#"><img class="img-responsive profile-cont" alt="Salman Javeed" src="/ui/prof-pic.jpg">
-                            </a>
-                            <a href="#"><img class="img-responsive profile-cont" alt="Salman Javeed" src="/ui/prof-pic.jpg">
-                            </a>
-                            <a href="#"><img class="img-responsive profile-cont" alt="Salman Javeed" src="/ui/prof-pic.jpg">
-                            </a>
-                            <a href="#"><img class="img-responsive profile-cont" alt="Salman Javeed" src="/ui/prof-pic.jpg">
-                            </a>
-                            <a class="view-all" href="https://web.facebook.com/SalmanJaveed" target="_blank">15+
-        		</a>
-                        </li>
-                    </ul>
-                </li> --> 
-                <li>
-                    <div class="link" id="counter" >
-                        <i class="fa fa-users"></i>Friends Comments <small><span id="count">0</span></small>
-                        <i class="fa fa-chevron-down"></i>
-                    </div>
-                    <ul class="submenu">
-<!--                        <li > 
-                            <div style="width: 50%; margin: auto;"> 
-                                <input type="text" id="txtName" placeholder="Enter Name" class="form-control">
-                                <textarea class="form-control" id="txtComment" placeholder="Your Comments"></textarea> -->
-                                <!--   <input type="button" id="btnSubmit" value="Submit" onclick = "displayComments()"> -->
- <!--                             
-                                    <a href="#" class="btn" onclick="displayComments()">
-                                        <span class="fa fa-paper-plane" style="text-align: center; padding-bottom:5px;"> Submit</span>  </a>
-                                </div> 
-                        </li>
--->
-                        <li>
-                            <div id="login_area" style="background: white;">
-                                <center>Loading login status...</center>
-                            </div>
-                        </li>
-<!--    
-                        <li>
-                            <ul class="list-group" id="listNames">
-                            </ul>
-                        </li>
--->
-                        <li>
-                            <div style="background: white;">
-                                <h3>Articles</h3>
-                                <div id="articles">
-                                    
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    
-                </li>
+
+<body>
+
+   <!-- Header
+   ================================================== -->
+   <header id="top">
+
+   	<div class="row">
+
+   		<div class="header-content twelve columns">
+
+		      <h1 id="logo-text"><a href="index.html" title="">IMAD 2017.</a></h1>
+				<p id="intro">A Simple Blog Project by Salman Javeed</p>
+
+			</div>			
+
+	   </div>
+
+	   <nav id="nav-wrap"> 
+
+	   	<a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show Menu</a>
+		   <a class="mobile-btn" href="#" title="Hide navigation">Hide Menu</a>
+
+	   	<div class="row">    		            
+
+			   	<ul id="nav" class="nav">
+			      	<li class="current"><a href="/">Home</a></li>                 
+			   	</ul>
+                <!-- need to add the registration and log in values here -->
+                <div id="div-signin">
+                </div>
+                <div id="div-register">
+                </div>
+                <div id="div-welcome">
+                </div>
+                
+                 <!-- end #nav -->			   	 
+
+	   	</div> 
+
+	   </nav> <!-- end #nav-wrap --> 	     
+
+   </header> <!-- Header End -->
+
+   <!-- Content
+   ================================================== -->
+   <div id="content-wrap">
+
+   	<div class="row">
+
+   		<div id="main" class="eight columns">
+
+	   	<article class="entry">
+
+					<header class="entry-header">
+
+						<h2 class="entry-title">
+							<a href="#" title=${heading}>${heading}</a>
+						</h2> 				 
+					
+						<div class="entry-meta">
+							<ul>
+								<li>${date}</li>
+								<span class="meta-sep">&bull;</span>								
+								<!--<li><a href="#" title="" rel="category tag">Ghost</a></li>
+								<span class="meta-sep">&bull;</span>-->
+								<li>${username}</li>
+							</ul>
+						</div> 
+					 
+					</header> 
+					
+					<div class="entry-content">
+						<p>${content}</p>
+					</div> 
+
+				</article> <!-- end entry -->
+
+						
+
+   		</div> <!-- end main -->
+
+   		<div id="sidebar" class="four columns">
+
+   			<div class="widget widget_search">
+                  <h3>Search</h3> 
+                  <form action="#">
+
+                     <input type="text" value="Search here..." onblur="if(this.value == '') { this.value = 'Search here...'; }" onfocus="if (this.value == 'Search here...') { this.value = ''; }" class="text-search">
+                     <input type="submit" value="" class="submit-search">
+
+                  </form>
+               </div>
+
+   			<div class="widget widget_categories group">
+   				<h3>Categories.</h3> 
+   				<ul>
+						<li><a href="#" title="">Wordpress</a> (2)</li>
+						<li><a href="#" title="">Ghost</a> (14)</li>
+						<li><a href="#" title="">Joomla</a> (5)</li>
+						<li><a href="#" title="">Drupal</a> (3)</li>
+						<li><a href="#" title="">Magento</a> (2)</li>
+						<li><a href="#" title="">Uncategorized</a> (9)</li>						
+					</ul>
+				</div>
+
+				<div class="widget widget_text group">
+					<h3>Widget Text.</h3>
+
+   				<p>Lorem ipsum Ullamco commodo laboris sit dolore commodo aliquip incididunt fugiat esse dolor aute fugiat minim eiusmod do velit labore fugiat officia ad sit culpa labore in consectetur sint cillum sint consectetur voluptate adipisicing Duis irure magna ut sit amet reprehenderit.</p>
+
+   			</div>
+
+   			<div class="widget widget_tags">
+               <h3>Post Tags.</h3>
+
+               <div class="tagcloud group">
+                	<a href="#">Corporate</a>
+                  <a href="#">Onepage</a>
+                  <a href="#">Agency</a>
+                  <a href="#">Multipurpose</a>
+                  <a href="#">Blog</a>
+                  <a href="#">Landing Page</a>
+                  <a href="#">Resume</a>
+               </div>
+                  
+            </div>
+
+            <div class="widget widget_popular">
+               <h3>Popular Post.</h3>
+
+               <ul class="link-list">
+                  <li><a href="#">Sint cillum consectetur voluptate.</a></li>
+                  <li><a href="#">Lorem ipsum Ullamco commodo.</a></li>
+                  <li><a href="#">Fugiat minim eiusmod do.</a></li>                     
+               </ul>
+                  
+            </div>
+   			
+   		</div> <!-- end sidebar -->
+
+   	</div> <!-- end row -->
+
+   </div> <!-- end content-wrap -->
+   
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+      <div class="row"> 
+
+      	<div class="twelve columns">	
+				<ul class="social-links">
+               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+               <li><a href="#"><i class="fa fa-google-plus"></i></a></li>               
+               <li><a href="#"><i class="fa fa-github-square"></i></a></li>
+               <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa fa-flickr"></i></a></li>               
+               <li><a href="#"><i class="fa fa-skype"></i></a></li>
+            </ul>			
+      	</div>
+      	
+         <div class="six columns info">
+
+            <h3>About Keep It Simple</h3> 
+
+            <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
+            Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
+            nibh id elit. 
+            </p>
+
+            <p>Lorem ipsum Sed nulla deserunt voluptate elit occaecat culpa cupidatat sit irure sint 
+            sint incididunt cupidatat esse in Ut sed commodo tempor consequat culpa fugiat incididunt.</p>
+
+         </div>
+
+         <div class="four columns">
+
+            <h3>Photostream</h3>
+            
+            <ul class="photostream group">
+               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
+               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
+               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
+               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
+               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
+               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
+               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
+               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
+            </ul>           
+
+         </div>
+
+         <div class="two columns">
+            <h3 class="social">Navigate</h3>
+
+            <ul class="navigate group">
+               <li><a href="#">Home</a></li>
+               <li><a href="#">Blog</a></li>
+               <li><a href="#">Demo</a></li>
+               <li><a href="#">Archives</a></li>
+               <li><a href="#">About</a></li>
             </ul>
-        </div>
-    </div>
-    <script>
-        $(function () {
-            var Accordion = function (el, multiple) {
-                this.el = el || {};
-                this.multiple = multiple || false;
+         </div>
 
-                // Variables privadas
-                var links = this.el.find('.link');
-                // Evento
-                links.on('click', {
-                    el: this.el,
-                    multiple: this.multiple
-                }, this.dropdown)
-            }
+         <p class="copyright">&copy; Copyright 2014 Keep It Simple. &nbsp; Design by <a title="Styleshout" href="http://www.styleshout.com/">Styleshout</a>.</p>
+        
+      </div> <!-- End row -->
 
-            Accordion.prototype.dropdown = function (e) {
-                var $el = e.data.el;
-                $this = $(this),
-                    $next = $this.next();
+      <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-chevron-up"></i></a></div>
 
-                $next.slideToggle();
-                $this.parent().toggleClass('open');
+   </footer> <!-- End Footer-->
 
-                if (!e.data.multiple) {
-                    $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
-                }
-            }
 
-            var accordion = new Accordion($('#accordion'), false);
-        });
+   <!-- Java Script
+   ================================================== -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>  
+   <script src="js/main.js"></script>
 
-       // displayinitCounter(); /* display initial counter value so that if there are already comments on first use it doesnt show 0 */
-       // displayinitComments(); /* display initial comments so that for existing comments it doesnt show blank */
-    </script>
+</body>
+
+</html>
+   		<div id="sidebar" class="four columns">
+
+   			<div class="widget widget_search">
+                  <h3>Search</h3> 
+                  <form action="#">
+					<input type ="text" id="username" placeholder="Your Username" class="text-search">
+					<input type="password" id="password" placeholder="Your Password" class="text-search">
+                    <!-- <input type="text" value="Search here..." onblur="if(this.value == '') { this.value = 'Search here...'; }" onfocus="if (this.value == 'Search here...') { this.value = ''; }" class="text-search">
+                     <input type="submit" value="" class="submit-search" disabled>-->
+					 <input type="BUTTON" id="login_btn" class="button" value="Login">
+					 <input type="BUTTON" id="register_btn" class="button" value="Register">
+					 
+
+                  </form>
+               </div>
+
+   			<div class="widget widget_categories group">
+   				<h3>Articles</h3> 
+   				<ul id="article-list">
+                <li><a href="#" title="article 1">Article 1</a></li>
+<!--
+						<li><a href="#" title="">Wordpress</a> (2)</li>
+						<li><a href="#" title="">Ghost</a> (14)</li>
+						<li><a href="#" title="">Joomla</a> (5)</li>
+						<li><a href="#" title="">Drupal</a> 3</li>
+						<li><a href="#" title="">Magento</a> (2)</li>
+						<li><a href="#" title="">Uncategorized</a> (9)</li>						
+-->
+					</ul>
+				</div>
+
+   
+   <!--- 
+   *
+   * We will show some stats 
+   *
+   ***** -->
+     <h3>Stats</h3>
+
+            <ul class="stats-tabs" id="stat-tab">
+<!--			      <li><a href="#">1,234 <em>Sasuke</em></a></li> -->
+                        <li ><a href="#"><span id="tot-visitors">0 </span><em>Visitors</em></a></li>
+                        <li ><a href="#"><span  id="tot-articles">0 </span><em>Articles</em></a></li>
+                        <li ><a href="#"><span id="tot-comments">0 </span><em>Comments</em></a></li>
+                        <li ><a href="#"><span id="tot-registered">0 </span><em>Registered Users</em></a></li>
+		      </ul>
+   
+   		</div> <!-- end sidebar -->
+
+   	</div> <!-- end row -->
+
+   </div> <!-- end content-wrap -->
+
+
+   <!-- Footer
+   ================================================== -->
+   <footer>
+
+      <div class="row"> 
+
+      	<div class="twelve columns">	
+				<ul class="social-links">
+               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+               <li><a href="#"><i class="fa fa-google-plus"></i></a></li>               
+               <li><a href="#"><i class="fa fa-github-square"></i></a></li>
+               <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+               <li><a href="#"><i class="fa fa-flickr"></i></a></li>               
+               <li><a href="#"><i class="fa fa-skype"></i></a></li>
+            </ul>			
+      	</div>
+      	
+         <div class="six columns info">
+
+            <h3> About Salman</h3> 
+
+            <p align="justify">I graduated in Computer Science and have an advanced systems management diploma from NIIT. But, i am an entrepreneur in a totally different field. Computers and coding have always been my love, and i have made a few websites, and i am quite proficient in xBases.
+            </p>
+			<blockquote>
+            <p>Someday, i hope to make a mobile app, all by myself. Difficult but not impossible</p>
+			<cite>
+            Salman Javeed </cite> </blockquote>
+         </div>
+
+         <div class="four columns">
+
+            <h3>Recent Comments</h3>
+            
+            <!--<ul class="photostream group">-->
+			<ul class="info">
+               <li><a href="#"><BLOCKQUOTE>This is Comment 1</BLOCKQUOTE><CITE>user 1</CITE></a></li>
+               <li><a href="#"><BLOCKQUOTE>This is Comment 2</BLOCKQUOTE><CITE>user 2</CITE></a></li>
+			   <li><a href="#"><BLOCKQUOTE>This is Comment 3</BLOCKQUOTE><CITE>user 3</CITE></a></li>
+            </ul>           
+
+         </div>
+
+         <div class="two columns">
+            <h3 class="social">Navigate</h3>
+
+            <ul class="navigate group">
+               <li><a href="#">Home</a></li>
+               <li><a href="#">Blog</a></li>
+               <li><a href="#">Demo</a></li>
+               <li><a href="#">Archives</a></li>
+               <li><a href="#">About</a></li>
+            </ul>
+         </div>
+
+         <p class="copyright">&copy; Copyright 2014 Keep It Simple. &nbsp; Design by <a title="Styleshout" href="http://www.styleshout.com/">Styleshout</a>.</p>
+        
+      </div> <!-- End row -->
+
+      <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-chevron-up"></i></a></div>
+
+   </footer> <!-- End Footer-->
+
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>  
+   <script src="js/main.js"></script>
+
 </body>
 
 </html>
