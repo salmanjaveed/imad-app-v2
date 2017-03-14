@@ -237,10 +237,11 @@ function loadArticles () {
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
             var articles = document.getElementById('articles-list');
-            alert(articles);
+            console.log("articles", articles);
             if (request.status === 200) {
                 var content = ' ';
                 var articleData = JSON.parse(this.responseText);
+                console.log("articleData", articleData);
                 for (var i=0; i< articleData.length; i++) {
                     content +=`
                     
