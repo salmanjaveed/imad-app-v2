@@ -259,6 +259,9 @@ function loadArticles () {
 							</ul>
 						</div>
 					</header>
+						<div class="entry-content">
+						<p>${content}</p>
+					</div> 
                     `;
                     
    /*                 content += `<li>  
