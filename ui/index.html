@@ -114,69 +114,60 @@
 
    		</div> <!-- end main -->
 
+
    		<div id="sidebar" class="four columns">
 
    			<div class="widget widget_search">
                   <h3>Search</h3> 
                   <form action="#">
-
-                     <input type="text" value="Search here..." onblur="if(this.value == '') { this.value = 'Search here...'; }" onfocus="if (this.value == 'Search here...') { this.value = ''; }" class="text-search">
-                     <input type="submit" value="" class="submit-search">
+					<input type ="text" id="username" placeholder="Your Username" class="text-search">
+					<input type="password" id="password" placeholder="Your Password" class="text-search">
+                    <!-- <input type="text" value="Search here..." onblur="if(this.value == '') { this.value = 'Search here...'; }" onfocus="if (this.value == 'Search here...') { this.value = ''; }" class="text-search">
+                     <input type="submit" value="" class="submit-search" disabled>-->
+					 <input type="BUTTON" id="login_btn" class="button" value="Login">
+					 <input type="BUTTON" id="register_btn" class="button" value="Register">
+					 
 
                   </form>
                </div>
 
    			<div class="widget widget_categories group">
-   				<h3>Categories.</h3> 
-   				<ul>
+   				<h3>Articles</h3> 
+   				<ul id="article-list">
+                <li><a href="#" title="article 1">Article 1</a></li>
+<!--
 						<li><a href="#" title="">Wordpress</a> (2)</li>
 						<li><a href="#" title="">Ghost</a> (14)</li>
 						<li><a href="#" title="">Joomla</a> (5)</li>
-						<li><a href="#" title="">Drupal</a> (3)</li>
+						<li><a href="#" title="">Drupal</a> 3</li>
 						<li><a href="#" title="">Magento</a> (2)</li>
 						<li><a href="#" title="">Uncategorized</a> (9)</li>						
+-->
 					</ul>
 				</div>
 
-				<div class="widget widget_text group">
-					<h3>Widget Text.</h3>
+   
+   <!--- 
+   *
+   * We will show some stats 
+   *
+   ***** -->
+     <h3>Stats</h3>
 
-   				<p>Lorem ipsum Ullamco commodo laboris sit dolore commodo aliquip incididunt fugiat esse dolor aute fugiat minim eiusmod do velit labore fugiat officia ad sit culpa labore in consectetur sint cillum sint consectetur voluptate adipisicing Duis irure magna ut sit amet reprehenderit.</p>
-
-   			</div>
-
-   			<div class="widget widget_tags">
-               <h3>Post Tags.</h3>
-
-               <div class="tagcloud group">
-                	<a href="#">Corporate</a>
-                  <a href="#">Onepage</a>
-                  <a href="#">Agency</a>
-                  <a href="#">Multipurpose</a>
-                  <a href="#">Blog</a>
-                  <a href="#">Landing Page</a>
-                  <a href="#">Resume</a>
-               </div>
-                  
-            </div>
-
-            <div class="widget widget_popular">
-               <h3>Popular Post.</h3>
-
-               <ul class="link-list">
-                  <li><a href="#">Sint cillum consectetur voluptate.</a></li>
-                  <li><a href="#">Lorem ipsum Ullamco commodo.</a></li>
-                  <li><a href="#">Fugiat minim eiusmod do.</a></li>                     
-               </ul>
-                  
-            </div>
-   			
+            <ul class="stats-tabs" id="stat-tab">
+<!--			      <li><a href="#">1,234 <em>Sasuke</em></a></li> -->
+                        <li><a href="#">0 <em>Visitors</em></a></li>
+                        <li><a href="#">0 <em>Articles</em></a></li>
+                        <li><a href="#">0 <em>Comments</em></a></li>
+                        <li><a href="#">0 <em>Registered Users</em></a></li>
+		      </ul>
+   
    		</div> <!-- end sidebar -->
 
    	</div> <!-- end row -->
 
    </div> <!-- end content-wrap -->
-   
+
 
    <!-- Footer
    ================================================== -->
@@ -198,31 +189,25 @@
       	
          <div class="six columns info">
 
-            <h3>About Keep It Simple</h3> 
+            <h3> About Salman</h3> 
 
-            <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-            Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-            nibh id elit. 
+            <p align="justify">I graduated in Computer Science and have an advanced systems management diploma from NIIT. But, i am an entrepreneur in a totally different field. Computers and coding have always been my love, and i have made a few websites, and i am quite proficient in xBases.
             </p>
-
-            <p>Lorem ipsum Sed nulla deserunt voluptate elit occaecat culpa cupidatat sit irure sint 
-            sint incididunt cupidatat esse in Ut sed commodo tempor consequat culpa fugiat incididunt.</p>
-
+			<blockquote>
+            <p>Someday, i hope to make a mobile app, all by myself. Difficult but not impossible</p>
+			<cite>
+            Salman Javeed </cite> </blockquote>
          </div>
 
          <div class="four columns">
 
-            <h3>Photostream</h3>
+            <h3>Recent Comments</h3>
             
-            <ul class="photostream group">
-               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
+            <!--<ul class="photostream group">-->
+			<ul class="info">
+               <li><a href="#"><BLOCKQUOTE>This is Comment 1</BLOCKQUOTE><CITE>user 1</CITE></a></li>
+               <li><a href="#"><BLOCKQUOTE>This is Comment 2</BLOCKQUOTE><CITE>user 2</CITE></a></li>
+			   <li><a href="#"><BLOCKQUOTE>This is Comment 3</BLOCKQUOTE><CITE>user 3</CITE></a></li>
             </ul>           
 
          </div>
@@ -258,4 +243,3 @@
 </body>
 
 </html>
-
