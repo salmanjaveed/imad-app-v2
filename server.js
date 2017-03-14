@@ -526,8 +526,13 @@ app.get('/articles/css/fonts/opensans/OpenSans-Light-webfont.woff', function (re
 });
 
 app.get('/articles/css/font-awesome/fonts/fontawesome-webfont.woff?v=4.0.3', function (req, res) {
-   res.sendFile(path.join(__dirname,'css/font-awesome/fonts','fontawesome-webfont.woff?v=4.0.3')); 
+   res.sendFile(path.join(__dirname,'css/font-awesome/fonts','fontawesome-webfont.woff')); 
 });
+
+app.get('/articles/css/font-awesome/fonts/fontawesome-webfont.ttf', function (req, res) {
+   res.sendFile(path.join(__dirname,'css/font-awesome/fonts','fontawesome-webfont.ttf')); 
+});
+
 
 app.get('/articles/css/fonts/opensans/OpenSans-Bold-webfont.woff', function (req, res) {
    res.sendFile(path.join(__dirname,'/css/fonts/opensans','OpenSans-Bold-webfont.woff')); 
