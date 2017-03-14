@@ -132,8 +132,22 @@
 *
 **************************************************************************/
 function loadLoginForm () {
-    var loginHtml = '<h3>Login/Register to unlock awesome features</h3>  <input type="text" id="username" placeholder="username" />        <input type="password" id="password" />        <br/><br/>        <input type="submit" id="login_btn" value="Login" />        <input type="submit" id="register_btn" value="Register" />     ';
-    document.getElementById('login_area').innerHTML = loginHtml;
+    var loginHtml = `<h3> Login / register </h3>
+                      <form action="#">
+					<input type ="text" id="username" placeholder="Your Username" class="text-search">
+					<input type="password" id="password" placeholder="Your Password" class="text-search">
+                    <!-- <input type="text" value="Search here..." onblur="if(this.value == '') { this.value = 'Search here...'; }" onfocus="if (this.value == 'Search here...') { this.value = ''; }" class="text-search">
+                     <input type="submit" value="" class="submit-search" disabled>-->
+					 <input type="BUTTON" id="login_btn" class="button" value="Login">
+					 <input type="BUTTON" id="register_btn" class="button" value="Register">
+					 
+
+                  </form>
+                  `;
+ /*
+ <h3>Login/Register to unlock awesome features</h3>  <input type="text" id="username" placeholder="username" />        <input type="password" id="password" />        <br/><br/>        <input type="submit" id="login_btn" value="Login" />        <input type="submit" id="register_btn" value="Register" />     ';*/
+ 
+    document.getElementById('login-area').innerHTML = loginHtml;
     
     // Submit username/password to login
     var submit = document.getElementById('login_btn');
@@ -185,6 +199,7 @@ function loadLoginForm () {
               if (request.status === 200) {
                   alert('User created successfully');
                   register.value = 'Registered!';
+                  
               } else {
                   alert('Could not register the user');
                   register.value = 'Register';
@@ -206,8 +221,8 @@ function loadLoginForm () {
 }
 
 function loadLoggedInUser (username) {
-    var loginArea = document.getElementById( 'login_area');
-    loginArea.innerHTML = `<h4> Hi ${username}</h4>
+    var loginArea = document.getElementById( 'login-area');
+    loginArea.innerHTML = `<h4> Welcome ${username} !</h4>
         <a href="/logout">Logout</a>`;
 }
 
@@ -286,7 +301,7 @@ function loadArticles () {
 
 
 // The first thing to do is to check if the user is logged in!
-//loadLogin();
+loadLogin();
 
 // Now this is something that we could have directly done on the server-side using templating too!
 loadArticles();
