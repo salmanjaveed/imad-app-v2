@@ -101,7 +101,7 @@ app.get('/logout', function (req, res) {
 app.get('/get-articles', function (req, res) {
    // make a select request
    // return a response with the results - select all articles along with the username
-   pool.query('SELECT article.*, "user".username FROM article, "user" WHERE article.user_id = "user.id" ORDER BY date DESC', function (err, result) {
+   pool.query('SELECT article.*, "user".username FROM article, "user" WHERE article.user_id = "user".id ORDER BY date DESC', function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
