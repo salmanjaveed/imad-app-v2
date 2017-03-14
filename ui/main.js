@@ -237,6 +237,7 @@ function loadArticles () {
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
             var articles = document.getElementById('articles-list');
+            alert(articles);
             if (request.status === 200) {
                 var content = ' ';
                 var articleData = JSON.parse(this.responseText);
@@ -266,6 +267,7 @@ function loadArticles () {
                 }
  /*               content += "</ul>"; */
                 articles.innerHTML = content; 
+                console.log(articles.innerHTML);
             } else {
                 alert(request.err.toString() + request.status.toString());
                 articles.innerHTML = 'Oops! Could not load all articles!';
