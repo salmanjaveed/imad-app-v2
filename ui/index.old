@@ -1,0 +1,59 @@
+                            </div>
+                        </li>
+<!--    
+                        <li>
+                            <ul class="list-group" id="listNames">
+                            </ul>
+                        </li>
+-->
+                        <li>
+                            <div style="background: white;">
+                                <h3>Articles</h3>
+                                <div id="articles">
+                                    
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            var Accordion = function (el, multiple) {
+                this.el = el || {};
+                this.multiple = multiple || false;
+
+                // Variables privadas
+                var links = this.el.find('.link');
+                // Evento
+                links.on('click', {
+                    el: this.el,
+                    multiple: this.multiple
+                }, this.dropdown)
+            }
+
+            Accordion.prototype.dropdown = function (e) {
+                var $el = e.data.el;
+                $this = $(this),
+                    $next = $this.next();
+
+                $next.slideToggle();
+                $this.parent().toggleClass('open');
+
+                if (!e.data.multiple) {
+                    $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+                }
+            }
+
+            var accordion = new Accordion($('#accordion'), false);
+        });
+
+       // displayinitCounter(); /* display initial counter value so that if there are already comments on first use it doesnt show 0 */
+       // displayinitComments(); /* display initial comments so that for existing comments it doesnt show blank */
+    </script>
+</body>
+
+</html>
