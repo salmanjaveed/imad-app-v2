@@ -58,7 +58,7 @@
 
 			   	<ul id="nav" class="nav">
 			      	<li><a href="index.html">Home</a></li>
-			      	<li><a href="#" id="sign-in" onClick="loadLogin()">Sign in/up</a></li>
+			      	<!--<li><a href="#" id="sign-in" onClick="loadLogin()">Sign in/up</a></li>-->
                     		
 			   	</ul> <!-- end #nav -->			   	 
 
@@ -76,7 +76,34 @@
 
    		<div id="main" class="eight columns">
 
-   			<section class="page">					
+<article class="entry">
+
+					<header class="entry-header">
+
+						<h2 class="entry-title">
+							<a href="#" title=${heading}>${heading}</a>
+						</h2> 				 
+					
+						<div class="entry-meta">
+							<ul>
+								<li>${date}</li>
+								<span class="meta-sep">&bull;</span>								
+								<!--<li><a href="#" title="" rel="category tag">Ghost</a></li>
+								<span class="meta-sep">&bull;</span>-->
+								<li>${username}</li>
+							</ul>
+						</div> 
+					 
+					</header> 
+					
+					<div class="entry-content">
+						<p>${content}</p>
+					</div> 
+
+				</article> <!-- end entry -->
+
+
+   			<!--<section class="page">					
 
 					<h2 class="entry-title" id="article-title">
 							${heading}
@@ -93,7 +120,7 @@
 			      <div class="row"> 
 			      </div>					
 
-				</section> <!-- End page -->
+				</section> --><!-- End page -->
 
    		</div> <!-- End main -->
 
@@ -116,7 +143,7 @@
 
    			<div class="widget widget_categories group">
    				<h3>Articles</h3> 
-   				<ul>
+   				<ul id="article-list">
                 <li><a href="#" title="article 1">Article 1</a></li>
 <!--
 						<li><a href="#" title="">Wordpress</a> (2)</li>
@@ -184,17 +211,13 @@
 
          <div class="four columns">
 
-            <h3>Photostream</h3>
+            <h3>Recent Comments</h3>
             
-            <ul class="photostream group">
-               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
-               <li><a href="#"><img alt="thumbnail" src="images/thumb.jpg"></a></li>
+            <!--<ul class="photostream group">-->
+			<ul class="info">
+               <li><a href="#"><BLOCKQUOTE>This is Comment 1</BLOCKQUOTE><CITE>user 1</CITE></a></li>
+               <li><a href="#"><BLOCKQUOTE>This is Comment 2</BLOCKQUOTE><CITE>user 2</CITE></a></li>
+			   <li><a href="#"><BLOCKQUOTE>This is Comment 3</BLOCKQUOTE><CITE>user 3</CITE></a></li>
             </ul>           
 
          </div>
