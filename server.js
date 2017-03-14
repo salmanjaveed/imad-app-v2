@@ -513,6 +513,42 @@ app.get('/articles/css/img/header-content-bg.png', function (req, res) {
    res.sendFile(path.join(__dirname,'css/img','header-content-bg.png')); 
 });
 
+app.get('/articles/css/fonts/merriweather/merriweather-regular-webfont.woff', function (req, res) {
+   res.sendFile(path.join(__dirname,'css/fonts/merriweather','/merriweather-regular-webfont.woff')); 
+});
+
+app.get('/articles/css/fonts/opensans/OpenSans-Regular-webfont.woff', function (req, res) {
+   res.sendFile(path.join(__dirname,'css/fonts/opensans','OpenSans-Regular-webfont.woff')); 
+});
+
+app.get('/articles/css/fonts/opensans/OpenSans-Light-webfont.woff', function (req, res) {
+   res.sendFile(path.join(__dirname,'/css/fonts/opensans','OpenSans-Light-webfont.woff')); 
+});
+
+app.get('/articles/css/font-awesome/fonts/fontawesome-webfont.woff?v=4.0.3', function (req, res) {
+   res.sendFile(path.join(__dirname,'css/font-awesome/fonts','fontawesome-webfont.woff?v=4.0.3')); 
+});
+
+app.get('/articles/css/fonts/opensans/OpenSans-Bold-webfont.woff', function (req, res) {
+   res.sendFile(path.join(__dirname,'/css/fonts/opensans','OpenSans-Bold-webfont.woff')); 
+});
+
+app.get('/articles/css/fonts/opensans/OpenSans-Semibold-webfont.woff', function (req, res) {
+   res.sendFile(path.join(__dirname,'css/fonts/opensans','OpenSans-Semibold-webfont.woff')); 
+});
+
+app.get('/articles/css/fonts/merriweather/merriweather-regular-webfont.ttf', function (req, res) {
+   res.sendFile(path.join(__dirname,'css/fonts/merriweather','merriweather-regular-webfont.ttf')); 
+});
+
+
+app.get('/articles/css/fonts/opensans/OpenSans-Light-webfont.ttf', function (req, res) {
+   res.sendFile(path.join(__dirname,'css/fonts/opensans','OpenSans-Light-webfont.ttf')); 
+});
+
+app.get('/articles/css/fonts/opensans/OpenSans-Regular-webfont.ttf', function (req, res) {
+   res.sendFile(path.join(__dirname,'css/fonts/opensans','OpenSans-Regular-webfont.ttf')); 
+});
 
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
