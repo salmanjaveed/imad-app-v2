@@ -76,7 +76,7 @@ function createTemplate(data) {
     var date = data.date;
     var username = data.username;
 
- var htmlTemplate = pagefile;
+ var htmlTemplate = ` ${pagefile.toString()} `;
 
  /*
     var htmlTemplate = `
