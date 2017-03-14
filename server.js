@@ -75,10 +75,10 @@ function createTemplate(data) {
     var content = data.content;
     var date = data.date;
     var username = data.username;
-/*
- var htmlTemplate = ` ${pagefile} `;
- console.log(htmlTemplate);
- */
+
+ var htmlTemplate = String.raw` ${pagefile} `;
+
+ /*
     var htmlTemplate = `
 <!DOCTYPE html>
 <!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
@@ -340,6 +340,7 @@ function createTemplate(data) {
 
 </html>
 `;
+*/
     return htmlTemplate;
 }
 
