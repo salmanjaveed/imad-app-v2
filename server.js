@@ -66,7 +66,7 @@ app.get('/logout', function (req, res) {
    g_loggedinUserId = 0;
    //res.send('<html><body>Logged out!<br/><br/><a href="/">Back to home</a></body></html>');
  //  console.log(path.basename(__filename));
-   res.sendFile(path.join(__dirname, '/', 'index.html'));
+   res.sendFile(path.join(__dirname, '/', ''));
 });
 
 
