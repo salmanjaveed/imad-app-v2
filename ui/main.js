@@ -251,6 +251,7 @@ function loadArticles () {
         if (request.readyState === XMLHttpRequest.DONE) {
             var articles = document.getElementById('articles-list');
             var articletitles = document.getElementById('article-titles');
+            console.log(articletitles);
             //console.log("articles", articles);
             if (request.status === 200) {
                 var content = ' ';
@@ -286,6 +287,7 @@ function loadArticles () {
                     </li>`;
 
                 }
+                
                  articles.innerHTML = content; 
                  articletitles.innerHTML = titles;
                 // loadLogin(); // display the login area or welcome screen
