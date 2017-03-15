@@ -59,6 +59,18 @@ app.get('/auth/check-login', function (req, res) {
 });
 
 
+app.get('/logout', function (req, res) {
+   delete req.session.auth;
+   g_loggedinUserName = ''; // Keep the user loggedin
+   g_isUserloggedIn = false; // set flag to check if user is logged in
+   g_loggedinUserId = 0;
+   //res.send('<html><body>Logged out!<br/><br/><a href="/">Back to home</a></body></html>');
+ //  console.log(path.basename(__filename));
+   res.sendFile(path.join(__dirname, '/', 'index.html'));
+});
+
+
+
 var fs = require('fs'),
     filePath = './ui/page.html';
 
@@ -202,17 +214,6 @@ app.post('/login', function (req, res) {
           }
       }
    });
-});
-
-
-app.get('/logout', function (req, res) {
-   delete req.session.auth;
-   g_loggedinUserName = ''; // Keep the user loggedin
-   g_isUserloggedIn = false; // set flag to check if user is logged in
-   g_loggedinUserId = 0;
-   //res.send('<html><body>Logged out!<br/><br/><a href="/">Back to home</a></body></html>');
-   console.log(path.basename(__filename));
-   res.sendFile('/.');
 });
 
 
