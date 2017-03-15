@@ -39,7 +39,7 @@ var g_loggedinUserId = 0;
 app.get('/auth/check-login', function (req, res) {
    
    if (req.session && req.session.auth && req.session.auth.userId) {
-       console.log(req.session, req.session.auth, req.session.auth.userId);
+       //console.log(req.session, req.session.auth, req.session.auth.userId);
        //Load the user object
        pool.query('SELECT * FROM "user" WHERE id= $1', [req.session.auth.userId], function (err, result) {
           if (err) { 
