@@ -211,7 +211,8 @@ app.get('/logout', function (req, res) {
    g_isUserloggedIn = false; // set flag to check if user is logged in
    g_loggedinUserId = 0;
    //res.send('<html><body>Logged out!<br/><br/><a href="/">Back to home</a></body></html>');
-   res.sendFile(path.basename(__filename));
+   console.log(path.basename(__filename));
+   res.sendFile('/.');
 });
 
 
