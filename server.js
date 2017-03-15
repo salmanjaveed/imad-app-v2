@@ -70,7 +70,6 @@ var fs = require('fs'),
 
 //this is sync way
 var pagefile = fs.readFileSync(filePath, 'utf8');
-//console.log(pagefile);
 
 
 function createTemplate(data) {
@@ -212,7 +211,7 @@ app.get('/logout', function (req, res) {
    g_isUserloggedIn = false; // set flag to check if user is logged in
    g_loggedinUserId = 0;
    //res.send('<html><body>Logged out!<br/><br/><a href="/">Back to home</a></body></html>');
-   res.sendFile(window.location.pathname);
+   res.sendFile(path.basename(__filename));
 });
 
 
