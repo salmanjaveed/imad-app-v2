@@ -290,7 +290,7 @@ function loadArticles () {
                 
                  articles.innerHTML = content; 
                 // artit.innerHTML = titls;
-                document.getElementById('articletitles').innerHTML = titls;
+                document.getElementById("article-titles").innerHTML = titls;
             } else {
                 alert(request.err.toString() + request.status.toString());
                 articles.innerHTML = 'Oops! Could not load all articles!';
