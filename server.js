@@ -33,7 +33,9 @@ app.get('/', function (req, res) {
 });
 
 
-
+var g_loggedinUserName = ''; // Keep the user loggedin
+var g_isUserloggedIn = false; // set flag to check if user is logged in
+var g_loggedinUserId = 0;
 app.get('/auth/check-login', function (req, res) {
    
    if (req.session && req.session.auth && req.session.auth.userId) {
@@ -43,6 +45,9 @@ app.get('/auth/check-login', function (req, res) {
           if (err) { 
               res.status(500).send(err.toString());
           }  else {
+              g_isUserloggedIn = true;
+              g_loggedinUserName = result.rows[0].username;
+              g_loggedinUserId = result.rows[0].id;
               res.send(result.rows[0].username);
           }
        });
@@ -95,6 +100,9 @@ app.get('/hash/:input', function(req, res) {
 
 app.get('/logout', function (req, res) {
    delete req.session.auth;
+   g_loggedinUserName = ''; // Keep the user loggedin
+   g_isUserloggedIn = false; // set flag to check if user is logged in
+   g_loggedinUserId = 0;
    res.send('<html><body>Logged out!<br/><br/><a href="/">Back to home</a></body></html>');
 });
 
@@ -153,6 +161,17 @@ app.post('/create-user', function (req, res) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
+            g_loggedinUserName = username; // Keep the user loggedin
+            g_isUserloggedIn = true; // set flag to check if user is logged in
+      /*     //get the created users id in to the variable
+            pool.query('SELECT id FROM article ORDER BY id DESC LIMIT 1', function (err, result) {
+                if (err) {
+                    res.status(500).send(err.toString() + 'Cannot get create user Id!');
+                } else {
+                    g_loggedinUserId = result.rows[0].id;
+                }
+                }
+            } */
           res.send('User successfully created: ' + username);
       }
    });
@@ -181,7 +200,8 @@ app.post('/login', function (req, res) {
                 // set cookie with a session id
                 // internally, on the server side, it maps the session id to an object
                 // { auth: {userId }}
-                
+                 g_loggedinUserName = username; // Keep the user loggedin
+                 g_isUserloggedIn = true; // set flag to check if user is logged in
                 res.send('credentials correct!');
                 
               } else {
