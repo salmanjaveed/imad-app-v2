@@ -144,7 +144,7 @@ app.get('/articles/:articleName', function (req, res) {
             res.status(404).send('Article not found');
         } else {
             var articleData = result.rows[0];
-            req.setRequestHeader("Content-type", "text/html");
+            //req.setRequestHeader("Content-type", "text/html");
             res.send(createTemplate(articleData));
            
         }
