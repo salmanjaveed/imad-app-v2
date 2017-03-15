@@ -281,7 +281,7 @@ function loadArticles () {
 
                 }
                  articles.innerHTML = content; 
-                 //loadLogin(); // display the login area or welcome screen
+                // loadLogin(); // display the login area or welcome screen
             } else {
                 alert(request.err.toString() + request.status.toString());
                 articles.innerHTML = 'Oops! Could not load all articles!';
@@ -291,6 +291,7 @@ function loadArticles () {
     
     request.open('GET', '/get-articles', true);
     request.send(null);
+    loadLogin(); // display the login area or welcome screen
 }
 
 
