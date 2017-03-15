@@ -98,14 +98,6 @@ app.get('/hash/:input', function(req, res) {
     res.send(hashedString);
 });
 
-app.get('/logout', function (req, res) {
-   delete req.session.auth;
-   g_loggedinUserName = ''; // Keep the user loggedin
-   g_isUserloggedIn = false; // set flag to check if user is logged in
-   g_loggedinUserId = 0;
-   res.send('<html><body>Logged out!<br/><br/><a href="/">Back to home</a></body></html>');
-});
-
 app.get('/get-articles', function (req, res) {
    // make a select request
    // return a response with the results - select all articles along with the username
@@ -212,6 +204,17 @@ app.post('/login', function (req, res) {
       }
    });
 });
+
+
+app.get('/logout', function (req, res) {
+   delete req.session.auth;
+   g_loggedinUserName = ''; // Keep the user loggedin
+   g_isUserloggedIn = false; // set flag to check if user is logged in
+   g_loggedinUserId = 0;
+   //res.send('<html><body>Logged out!<br/><br/><a href="/">Back to home</a></body></html>');
+   res.sendFile(window.location.pathname);
+});
+
 
 app.post(`/submit-comment/:articleName`, function (req, res) {
    // Check if the user is logged in
