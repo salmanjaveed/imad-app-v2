@@ -298,7 +298,7 @@ function loadArticles () {
     
     request.open('GET', '/get-articles', true);
     request.send(null);
-    loadLogin(); // display the login area or welcome screen
+  //  loadLogin(); // display the login area or welcome screen
 }
 
 
