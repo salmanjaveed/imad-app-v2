@@ -274,20 +274,14 @@ function loadArticles () {
 							</ul>
 						</div>
 					</header>
-						<div class="entry-content">
+						<div class="entry-content" align="justify">
 						<p class="drop-cap">${articleData[i].content}</p>
 					</div> 
                     `;
-                    
-   /*                 content += `<li>  
-                    <a href="/articles/${articleData[i].title}"> 
-                    ${articleData[i].heading}</a> (${articleData[i].date.split("T")[0]})
-                    </li>
-*/
+
                 }
- /*               content += "</ul>"; */
-                articles.innerHTML = content; 
-                console.log(articles.innerHTML);
+                 articles.innerHTML = content; 
+               
             } else {
                 alert(request.err.toString() + request.status.toString());
                 articles.innerHTML = 'Oops! Could not load all articles!';
