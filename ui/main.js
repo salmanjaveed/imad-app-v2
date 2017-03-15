@@ -250,9 +250,11 @@ function loadArticles () {
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
             var articles = document.getElementById('articles-list');
-            console.log("articles", articles);
+            var articletitles = document.getElementById('article-titles');
+            //console.log("articles", articles);
             if (request.status === 200) {
                 var content = ' ';
+                var titles = ' ';
                 var articleData = JSON.parse(this.responseText);
                 
                 for (var i=0; i< articleData.length; i++) {
@@ -277,9 +279,15 @@ function loadArticles () {
 						<p align="right"><a href="/articles/${articleData[i].title}">Read More...</a></p>
 					</div> 
                     `;
+                    
+                    titles += `
+                    <li>
+                        <a href="/articles/${articleData[i].title}" title="${articleData[i].heading}"> ${articleData[i].heading}</a>
+                    </li>`;
 
                 }
                  articles.innerHTML = content; 
+                 articletitles.innerHTML = titles;
                 // loadLogin(); // display the login area or welcome screen
             } else {
                 alert(request.err.toString() + request.status.toString());
