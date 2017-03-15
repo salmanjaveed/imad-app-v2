@@ -288,7 +288,7 @@ function loadArticles () {
             }
         }
     };
-    
+    loadLogin();
     request.open('GET', '/get-articles', true);
     request.send(null);
 }
