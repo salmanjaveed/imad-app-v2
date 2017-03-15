@@ -285,6 +285,7 @@ function loadArticles () {
                     <li>
                         <a href="/articles/${articleData[i].title}" title="${articleData[i].heading}"> ${articleData[i].heading}</a>
                     </li>`;
+                    console.log(titles);
 
                 }
                 
