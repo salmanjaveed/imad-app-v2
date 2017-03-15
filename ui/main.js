@@ -250,12 +250,12 @@ function loadArticles () {
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
             var articles = document.getElementById('articles-list');
-            var articletitles = document.getElementById('article-titles');
-            console.log(articletitles);
+            var artit = document.getElementById('article-titles');
+           // console.log(articletitles);
             //console.log("articles", articles);
             if (request.status === 200) {
                 var content = ' ';
-                var titles = ' ';
+                var titls = ' ';
                 var articleData = JSON.parse(this.responseText);
                 
                 for (var i=0; i< articleData.length; i++) {
@@ -281,17 +281,15 @@ function loadArticles () {
 					</div> 
                     `;
                     
-                    titles += `
+                    titls += `
                     <li>
                         <a href="/articles/${articleData[i].title}" title="${articleData[i].heading}"> ${articleData[i].heading}</a>
                     </li>`;
-                    console.log(titles);
-
+                    
                 }
                 
                  articles.innerHTML = content; 
-                 articletitles.innerHTML = titles;
-                // loadLogin(); // display the login area or welcome screen
+                 artit.innerHTML = titls;
             } else {
                 alert(request.err.toString() + request.status.toString());
                 articles.innerHTML = 'Oops! Could not load all articles!';
@@ -301,7 +299,6 @@ function loadArticles () {
     
     request.open('GET', '/get-articles', true);
     request.send(null);
-  //  loadLogin(); // display the login area or welcome screen
 }
 
 
