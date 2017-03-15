@@ -275,7 +275,7 @@ function loadArticles () {
 						</div>
 					</header>
 						<div class="entry-content">
-						<p>${articleData[i].content}</p>
+						<p class="drop-cap">${articleData[i].content}</p>
 					</div> 
                     `;
                     
