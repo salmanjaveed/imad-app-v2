@@ -144,9 +144,7 @@ function loadLoginForm () {
 
                   </form>
                   `;
- /*
- <h3>Login/Register to unlock awesome features</h3>  <input type="text" id="username" placeholder="username" />        <input type="password" id="password" />        <br/><br/>        <input type="submit" id="login_btn" value="Login" />        <input type="submit" id="register_btn" value="Register" />     ';*/
- 
+
     document.getElementById('login-area').innerHTML = loginHtml;
     
     // Submit username/password to login
@@ -197,11 +195,11 @@ function loadLoginForm () {
           if (request.readyState === XMLHttpRequest.DONE) {
               // Take some action
               if (request.status === 200) {
-                  alert('User created successfully');
+                 // alert('User created successfully');
                   register.value = 'Registered!';
                   
               } else {
-                  alert('Could not register the user');
+                 //alert('Could not register the user');
                   register.value = 'Register';
               }
           }
@@ -210,11 +208,11 @@ function loadLoginForm () {
         // Make the request
         var username = document.getElementById('username').value;
         var password = document.getElementById('password').value;
-        console.log(username);
-        console.log(password);
+        //console.log(username);
+        //console.log(password);
         request.open('POST', '/create-user', true);
         request.setRequestHeader('Content-Type', 'application/json');
-                request.send(JSON.stringify({username: username, password: password}));  
+        request.send(JSON.stringify({username: username, password: password}));  
         register.value = 'Registering...';
     
     };
