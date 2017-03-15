@@ -273,7 +273,7 @@ function loadArticles () {
 						</div>
 					</header>
 						<div class="entry-content" align="justify">
-						<p class="drop-cap">${articleData[i].content}</p>
+						<p class="drop-cap">${articleData[i].content.substring(0,150)}</p>
 					</div> 
                     `;
 
