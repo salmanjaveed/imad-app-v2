@@ -273,8 +273,8 @@ function loadArticles () {
 						</div>
 					</header>
 						<div class="entry-content" align="justify">
-						<p class="drop-cap">${articleData[i].content.substring(0,150)}</p>
-						<<a href="/articles/${articleData[i].title}" title="${articleData[i].heading}">Read More...</a>
+						<p class="drop-cap">${articleData[i].content.substring(0,300)}</p>
+						<p align="right"><a href="/articles/${articleData[i].title}">Read More...</a></p>
 					</div> 
                     `;
 
