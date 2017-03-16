@@ -256,7 +256,7 @@ app.post(`/submit-comment/:articleName`, function (req, res) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
-         
+          console.log(result.rows);
           res.send(JSON.stringify(result.rows));
       }
    });
