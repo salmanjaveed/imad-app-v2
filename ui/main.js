@@ -189,7 +189,8 @@ function loadLoginForm () {
     register.onclick = function () {
         // Create a request object
         var request = new XMLHttpRequest();
-        
+         var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;     
         // Capture the response and store it in a variable
         request.onreadystatechange = function () {
           if (request.readyState === XMLHttpRequest.DONE) {
@@ -197,6 +198,7 @@ function loadLoginForm () {
               if (request.status === 200) {
                  // alert('User created successfully');
                   register.value = 'Registered!';
+                  loadLoggedInUser(username);
                   
               } else {
                  //alert('Could not register the user');
@@ -206,8 +208,7 @@ function loadLoginForm () {
         };
         
         // Make the request
-        var username = document.getElementById('username').value;
-        var password = document.getElementById('password').value;
+       
         //console.log(username);
         //console.log(password);
         request.open('POST', '/create-user', true);
