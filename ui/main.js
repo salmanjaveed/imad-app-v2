@@ -310,6 +310,7 @@ function loadStats () {
             if (request.status === 200) {
                 var stats = JSON.parse(this.responseText);
                 var content = ' ';
+                console.log(stats);
                 for (var i=0; i< stats.length; i++) {
                     content +=`
                     <li><a href="#">123 <em>Visitors</em></a></li>
