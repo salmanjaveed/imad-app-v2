@@ -250,7 +250,7 @@ function loadArticles () {
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
             var articles = document.getElementById('articles-list');
-            var artit = document.getElementById('article-titles');
+            var articletitles = document.getElementById('article-titles');
            // console.log(articletitles);
             //console.log("articles", articles);
             if (request.status === 200) {
@@ -281,17 +281,15 @@ function loadArticles () {
 					</div> 
                     `;
                     
-                    titls += `
+                    titles += `
                     <li>
                         <a href="/articles/${articleData[i].title}" title="${articleData[i].heading}"> ${articleData[i].heading}</a>
                     </li>`;
                     
                 }
                 
-                 artit.innerHTML = titls;
+                 articletitles.innerHTML = titles;
                  articles.innerHTML = content; 
-                 
-                //document.getElementById("article-titles").innerHTML = titls;
             } else {
                 alert(request.err.toString() + request.status.toString());
                 articles.innerHTML = 'Oops! Could not load all articles!';
@@ -303,9 +301,44 @@ function loadArticles () {
     request.send(null);
 }
 
+function loadStats () {
+        // Check if the user is already logged in
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            var statsTab = document.getElementById('stat-tab');
+            if (request.status === 200) {
+                var stats = JSON.parse(this.responseText);
+                var content = ' ';
+                for (var i=0; i< stats.length; i++) {
+                    content +=`
+                    <li><a href="#">123 <em>Visitors</em></a></li>
+                        <li><a href="#">${stats[i].articleCount} <em>Articles</em></a></li>
+                        <li><a href="#">${stats[i].commentCount} <em>Comments</em></a></li>
+                        <li><a href="#">${stats[i].userCount} <em>Registered Users</em></a></li>
+                    `;
+
+                }
+                
+                 statsTab.innerHTML = content;
+            } else {
+                alert(request.err.toString() + request.status.toString());
+                articles.innerHTML = 'Oops! Could not load all articles!';
+            }
+        }
+    };
+    
+    request.open('GET', '/get-stats', true);
+    request.send(null);
+}
+
+
 
 // The first thing to do is to check if the user is logged in!
 loadLogin();
 
 // Now this is something that we could have directly done on the server-side using templating too!
 loadArticles();
+
+//Load site stats 
+loadStats();
