@@ -255,7 +255,7 @@ function loadArticles () {
             //console.log("articles", articles);
             if (request.status === 200) {
                 var content = ' ';
-                var titls = ' ';
+                var titles = ' ';
                 var articleData = JSON.parse(this.responseText);
                 
                 for (var i=0; i< articleData.length; i++) {
