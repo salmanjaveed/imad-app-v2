@@ -249,6 +249,20 @@ app.post(`/submit-comment/:articleName`, function (req, res) {
     }
 });
  
+ app.get('/get-stats', function (req, res) {
+   // make a select request
+   // return a response with the results - select all articles along with the username
+   pool.query('SELECT count(article.*) as articleCount, count("user".*) as userCount, count(comments.*) as commentCount FROM article, "user", comments', function (err, result) {
+      if (err) {
+          res.status(500).send(err.toString());
+      } else {
+         
+          res.send(JSON.stringify(result.rows));
+      }
+   });
+});
+
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
