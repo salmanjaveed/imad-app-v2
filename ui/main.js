@@ -198,7 +198,8 @@ function loadLoginForm () {
               if (request.status === 200) {
                  // alert('User created successfully');
                   register.value = 'Registered!';
-                  loadLoggedInUser(username);
+                 // loadLoggedInUser(username);
+                 loadLogin();
                   
               } else {
                  //alert('Could not register the user');
@@ -215,7 +216,7 @@ function loadLoginForm () {
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({username: username, password: password}));  
         register.value = 'Registering...';
-        loadLoggedInUser(username);
+        
     
     };
 }
