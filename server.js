@@ -253,7 +253,9 @@ app.post(`/submit-comment/:articleName`, function (req, res) {
    // make a select request
    // return a response with the results - select all articles along with the username
    pool.query('SELECT (select count(*)  from article as articleCount), (select count(*)  from "user") as userCount, (select count(*) FROM comment as commentCount)', function (err, result) {
+       console.log(err, result);
       if (err) {
+          console.log(err);
           res.status(500).send(err.toString());
       } else {
           console.log(result.rows);
