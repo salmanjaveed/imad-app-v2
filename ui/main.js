@@ -310,21 +310,21 @@ function loadStats () {
             if (request.status === 200) {
                 var stats = JSON.parse(this.responseText);
                 var content = ' ';
-                console.log(stats);
+                console.log("stats"+stats);
                 for (var i=0; i< stats.length; i++) {
                     content +=`
                     <li><a href="#">123 <em>Visitors</em></a></li>
-                        <li><a href="#">${stats[i].articleCount} <em>Articles</em></a></li>
-                        <li><a href="#">${stats[i].commentCount} <em>Comments</em></a></li>
-                        <li><a href="#">${stats[i].userCount} <em>Registered Users</em></a></li>
+                        <li><a href="#">${stats[i].articlecount} <em>Articles</em></a></li>
+                        <li><a href="#">${stats[i].commentcount} <em>Comments</em></a></li>
+                        <li><a href="#">${stats[i].usercount} <em>Registered Users</em></a></li>
                     `;
 
                 }
                 
                  statsTab.innerHTML = content;
             } else {
-                alert(request.err.toString() + request.status.toString());
-                articles.innerHTML = 'Oops! Could not load all articles!';
+                alert(request.err + request.status);
+                statsTab.innerHTML = 'Oops! Could not load all articles!';
             }
         }
     };
