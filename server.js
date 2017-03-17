@@ -145,7 +145,7 @@ app.get('/articles/:articleName', function (req, res) {
             res.status(404).send('Article not found');
         } else {
             var articleData = result.rows[0];
-            g_articleId = articleData[0].id; // set the global variable with article id
+            g_articleId = articleData.id; // set the global variable with article id
            
             res.send(createTemplate(articleData));
            
