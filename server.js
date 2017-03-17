@@ -160,7 +160,7 @@ app.get('/articles/:articleName', function (req, res) {
 });
 
 app.get('/get-num-comments/:articleName', function (req, res) {
-  // SELECT * FROM article WHERE title = '\'; DELETE WHERE a = \'asdf'
+  
   pool.query('SELECT count(comment.*) FROM comment, article WHERE article.title = $1 AND article.id = comment.article_id', [req.params.articleName], function (err, result) {
     if (err) {
         res.status(500).send(err.toString());
