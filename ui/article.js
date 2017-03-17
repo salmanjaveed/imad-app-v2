@@ -13,7 +13,7 @@ function loadCommentForm () {
     */
     // Submit username/password to login
     var submit = document.getElementById('submit_comment');
-    submit.disabled = false;
+    document.getElementById('submit_comment').disabled = false;
     submit.onclick = function () {
         // Create a request object
         var request = new XMLHttpRequest();
