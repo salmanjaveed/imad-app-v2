@@ -124,7 +124,7 @@ function getNumComments () {
        if (request.status === 200) {
                 var commentsCount = JSON.parse(this.responseText);
   
-                document.getElementById('Numcomments').innerHTML = commentsCount[0].count + " Comments";
+                document.getElementById('Numcomments').innerHTML = `${commentsCount[0].count}` + " Comments";
             } 
         };
     
