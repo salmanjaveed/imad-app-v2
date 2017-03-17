@@ -343,7 +343,7 @@ function submitComment () {
     // Submit username/password to login
      // Create a request object
         var request = new XMLHttpRequest();
-        
+        var submit = document.getElementById('submit_comment');
         // Capture the response and store it in a variable
         request.onreadystatechange = function () {
           if (request.readyState === XMLHttpRequest.DONE) {
