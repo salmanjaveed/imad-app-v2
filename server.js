@@ -134,6 +134,7 @@ app.get('/get-comments/:articleName', function (req, res) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
+          console.log("all: " + result.rows + " 0: " + result.rows[0]);
           res.send(JSON.stringify(result.rows));
       }
    });
