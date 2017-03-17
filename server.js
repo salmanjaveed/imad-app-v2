@@ -221,7 +221,7 @@ app.post('/login', function (req, res) {
 
 
 app.post(`/submit-comment/`, function (req, res) {
-    var comment = req.body.comment;
+    
    // Check if the user is logged in
     if (req.session && req.session.auth && req.session.auth.userId) {
         // First check if the article exists and get the article-id
@@ -233,10 +233,11 @@ app.post(`/submit-comment/`, function (req, res) {
                     res.status(400).send('Article not found');
                 } else {
                     var articleId = result.rows[0].id;
+                    var comment = req.body.comment;
                     // Now insert the right comment for this article
                     pool.query(
                         "INSERT INTO comment (comment, article_id, user_id) VALUES ($1, $2, $3)",
-                        [req.body.comment, articleId, req.session.auth.userId],
+                        [comment, articleId, req.session.auth.userId],
                         function (err, result) {
                             if (err) {
                                 res.status(500).send(err.toString());
