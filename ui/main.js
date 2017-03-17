@@ -336,6 +336,45 @@ function loadStats () {
     request.send(null);
 }
 
+// Submit Comments
+
+function submitComment () {
+ 
+    // Submit username/password to login
+     // Create a request object
+        var request = new XMLHttpRequest();
+        
+        // Capture the response and store it in a variable
+        request.onreadystatechange = function () {
+          if (request.readyState === XMLHttpRequest.DONE) {
+              // Take some action
+              if (request.status === 200) {
+                  submit.value = 'Submit'; // Success
+                  document.getElementById('cMessage').value = ''; // reset the message
+              } else if (request.status === 403) {
+                  submit.value = 'Invalid credentials. Try again?';
+              } else if (request.status === 500) {
+                  alert('Something went wrong on the server' + request.status.toString());
+                  submit.value = 'Submit';
+              } else {
+                  alert('Something went wrong on the server' + request.status.toString());
+                  submit.value = 'Submit';
+              }
+              loadLogin();
+          }  
+          // Not done yet
+        };
+        
+        // Make the request
+        var comment = document.getElementById('cMessage').value;
+        //console.log(username);
+        //console.log(password);
+        request.open('POST', '/comments/', true);
+        request.setRequestHeader('Content-Type', 'application/json');
+        request.send(JSON.stringify({comment: comment}));  
+        submit.value = 'Submitting...';
+        
+  }
 
 
 // The first thing to do is to check if the user is logged in!
