@@ -339,7 +339,7 @@ function loadStats () {
     request.open('GET', '/get-stats', true);
     request.send(null);
 }
-
+/*
 // Submit Comments
 
 function submitComment () {
@@ -379,7 +379,7 @@ function submitComment () {
         submit.value = 'Submitting...';
         
   }
-
+*/
 
 // The first thing to do is to check if the user is logged in!
 loadLogin();
