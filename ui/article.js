@@ -121,11 +121,15 @@ function getNumComments () {
         // Check if the user is already logged in
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
-       if (request.status === 200) {
-            var commentsCount = JSON.parse(this.responseText);
-            document.getElementById('Numcomments').innerHTML = `${commentsCount[0].count} Comments `;
-            } 
+      request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
+                var commentsCount = JSON.parse(this.responseText);
+                document.getElementById('Numcomments').innerHTML = `${commentsCount[0].count} Comments `;
+                }
+        }
         };
+    };
     
     request.open('GET', '/get-num-comments/' + currentArticleTitle, true);
     request.send(null);
