@@ -290,9 +290,13 @@ function loadArticles () {
                     </li>`;
                     
                 }
-                
-                 articletitles.innerHTML = titles;
-                 articles.innerHTML = content; 
+                if ( articletitles ) {
+                    articletitles.innerHTML = titles;   
+                }
+                 
+                 if ( articles ) {
+                    articles.innerHTML = content; 
+                 }
             } else {
                 alert(request.err.toString() + request.status.toString());
                 articles.innerHTML = 'Oops! Could not load all articles!';
