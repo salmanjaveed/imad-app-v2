@@ -108,7 +108,7 @@ function loadComments () {
                 //get the number of comments on this article
                 getNumComments();
             } else {
-                comments.innerHTML('Oops! Could not load comments!');
+                comments.innerHTML = 'Oops! Could not load comments!';
             }
         }
     };
@@ -122,9 +122,8 @@ function getNumComments () {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
        if (request.status === 200) {
-                var commentsCount = JSON.parse(this.responseText);
-  
-                document.getElementById('Numcomments').innerHTML = `${commentsCount[0].count}` + " Comments";
+            var commentsCount = JSON.parse(this.responseText);
+            document.getElementById('Numcomments').innerHTML = `${commentsCount[0].count} Comments `;
             } 
         };
     
