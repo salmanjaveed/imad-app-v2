@@ -369,7 +369,7 @@ function submitComment () {
         var comment = document.getElementById('cMessage').value;
         //console.log(username);
         //console.log(password);
-        request.open('POST', '/comments/', true);
+        request.open('POST', '/submit-comment', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({comment: comment}));  
         submit.value = 'Submitting...';
