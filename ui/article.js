@@ -52,7 +52,7 @@ function loadLoginforComment () {
                 loadCommentForm(this.responseText);
             }
             else {
-                document.getElementbyId('submit_btn').disabled = true;
+               // document.getElementbyId('submit_btn').disabled = true;
             }
         }
     };
