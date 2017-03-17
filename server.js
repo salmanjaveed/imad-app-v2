@@ -26,17 +26,21 @@ app.use(bodyParser.json());
 
 var pool = new Pool(config);
 
-app.use(session({ secret: 'someRandomSecretValuet', cookie: { maxAge: 1000 * 60 * 60 * 24 * 30 }, resave: true, saveUninitialized: true }));
-
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
-
 
 var g_loggedinUserName = ''; // Keep the user loggedin
 var g_isUserloggedIn = false; // set flag to check if user is logged in
 var g_loggedinUserId = 0;
 var g_articleId = 0;
+
+
+app.use(session({ secret: 'someRandomSecretValuet', cookie: { maxAge: 1000 * 60 * 60 * 24 * 30 }, resave: true, saveUninitialized: true }));
+
+app.get('/', function (req, res) {
+    g_articleId = 0; // reset article id
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+
+
 app.get('/auth/check-login', function (req, res) {
    
    if (req.session && req.session.auth && req.session.auth.userId) {
@@ -220,12 +224,11 @@ app.post('/login', function (req, res) {
 });
 
 
-app.post(`/submit-comment/`, function (req, res) {
-    
+app.post('/submit-comment/:articleName', function (req, res) {
    // Check if the user is logged in
     if (req.session && req.session.auth && req.session.auth.userId) {
         // First check if the article exists and get the article-id
-        pool.query('SELECT * from article where id = $1', g_articleId, function (err, result) {
+        pool.query('SELECT * from article where title = $1', [req.params.articleName], function (err, result) {
             if (err) {
                 res.status(500).send(err.toString());
             } else {
@@ -233,16 +236,15 @@ app.post(`/submit-comment/`, function (req, res) {
                     res.status(400).send('Article not found');
                 } else {
                     var articleId = result.rows[0].id;
-                    var comment = req.body.comment;
                     // Now insert the right comment for this article
                     pool.query(
                         "INSERT INTO comment (comment, article_id, user_id) VALUES ($1, $2, $3)",
-                        [comment, articleId, req.session.auth.userId],
+                        [req.body.comment, articleId, req.session.auth.userId],
                         function (err, result) {
                             if (err) {
                                 res.status(500).send(err.toString());
                             } else {
-                                res.status(200).send('Comment inserted!');
+                                res.status(200).send('Comment inserted!')
                             }
                         });
                 }
@@ -252,7 +254,6 @@ app.post(`/submit-comment/`, function (req, res) {
         res.status(403).send('Only logged in users can comment');
     }
 });
- 
  app.get('/get-stats', function (req, res) {
    // make a select request
    // return a response with the results - select all counts of articles, comments and users
