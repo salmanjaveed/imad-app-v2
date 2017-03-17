@@ -117,7 +117,7 @@ function loadComments () {
     request.send(null);
 }
 
-function loadComments () {
+function getNumComments () {
         // Check if the user is already logged in
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
