@@ -123,7 +123,7 @@ function loadComments () {
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
   
-                document.getElementById('Numcomments').innerHTML = this.responseText;
+                document.getElementById('Numcomments').innerHTML = JSON.parse(this.responseText)[0].count + " Comments";
             } 
         };
     
