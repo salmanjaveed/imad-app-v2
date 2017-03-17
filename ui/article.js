@@ -109,7 +109,7 @@ function loadComments () {
                 }
                 comments.innerHTML = content;
                 //get the number of comments on this article
-                getNumComments();
+               // getNumComments();
             } else {
                 comments.innerHTML = 'Oops! Could not load comments!';
             }
