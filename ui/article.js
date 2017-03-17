@@ -50,7 +50,10 @@ function loadLoginforComment () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 loadCommentForm(this.responseText);
-            } 
+            }
+            else {
+                document.getElementbyId('submit_btn').disabled = true;
+            }
         }
     };
     
