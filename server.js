@@ -36,6 +36,7 @@ app.get('/', function (req, res) {
 var g_loggedinUserName = ''; // Keep the user loggedin
 var g_isUserloggedIn = false; // set flag to check if user is logged in
 var g_loggedinUserId = 0;
+var g_articleId = 0;
 app.get('/auth/check-login', function (req, res) {
    
    if (req.session && req.session.auth && req.session.auth.userId) {
@@ -144,7 +145,8 @@ app.get('/articles/:articleName', function (req, res) {
             res.status(404).send('Article not found');
         } else {
             var articleData = result.rows[0];
-            //req.setRequestHeader("Content-type", "text/html");
+            g_articleId = articleData[0].id; // set the global variable with article id
+           
             res.send(createTemplate(articleData));
            
         }
@@ -218,11 +220,12 @@ app.post('/login', function (req, res) {
 });
 
 
-app.post(`/submit-comment/:articleName`, function (req, res) {
+app.post(`/submit-comment/`, function (req, res) {
+    var comment = req.body.comment;
    // Check if the user is logged in
     if (req.session && req.session.auth && req.session.auth.userId) {
         // First check if the article exists and get the article-id
-        pool.query('SELECT * from article where title = $1', [req.params.articleName], function (err, result) {
+        pool.query('SELECT * from article where id = $1', g_articleId, function (err, result) {
             if (err) {
                 res.status(500).send(err.toString());
             } else {
