@@ -366,7 +366,7 @@ function submitComment () {
         };
         
         // Make the request
-        var comment = document.getElementById('cMessage').value;
+        var comment = document.getElementById('comment').value;
         //console.log(username);
         //console.log(password);
         request.open('POST', '/submit-comment', true);
