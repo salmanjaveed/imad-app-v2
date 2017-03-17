@@ -121,9 +121,10 @@ function loadComments () {
         // Check if the user is already logged in
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
-        if (request.readyState === XMLHttpRequest.DONE) {
+       if (request.status === 200) {
+                var commentsCount = JSON.parse(this.responseText);
   
-                document.getElementById('Numcomments').innerHTML = JSON.parse(this.responseText)[0].count + " Comments";
+                document.getElementById('Numcomments').innerHTML = commentsCount[0].count + " Comments";
             } 
         };
     
