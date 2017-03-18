@@ -26,17 +26,9 @@ app.use(bodyParser.json());
 
 var pool = new Pool(config);
 
-
-var g_loggedinUserName = ''; // Keep the user loggedin
-var g_isUserloggedIn = false; // set flag to check if user is logged in
-var g_loggedinUserId = 0;
-var g_articleId = 0;
-
-
 app.use(session({ secret: 'someRandomSecretValuet', cookie: { maxAge: 1000 * 60 * 60 * 24 * 30 }, resave: true, saveUninitialized: true }));
 
 app.get('/', function (req, res) {
-    g_articleId = 0; // reset article id
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
@@ -56,11 +48,11 @@ app.get('/auth/check-login', function (req, res) {
 });
 
 
-app.get('/logout', function (req, res) {
+app.get('/logout/:currentlocation', function (req, res) {
    delete req.session.auth;
    //res.send('<html><body>Logged out!<br/><br/><a href="/">Back to home</a></body></html>');
  //  console.log(path.basename(__filename));
- var currentfile = window.location.pathname.split('/')[2];
+ var currentfile = req.params.currentlocation;
  if (currentfile === '') {
    res.sendFile(path.join(__dirname, 'ui', 'index.html'));
  } else {
@@ -142,7 +134,6 @@ app.get('/articles/:articleName', function (req, res) {
             res.status(404).send('Article not found');
         } else {
             var articleData = result.rows[0];
-            g_articleId = articleData.id; // set the global variable with article id
            
             res.send(createTemplate(articleData));
            
