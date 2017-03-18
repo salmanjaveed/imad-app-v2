@@ -224,22 +224,22 @@ function loadLoginForm () {
 function loginRegisteredUser ( username, password ){
     
 
-      var request = new XMLHttpRequest();
-        
+        var request = new XMLHttpRequest();
+        var submit = document.getElementById('register_btn');    
         // Capture the response and store it in a variable
         request.onreadystatechange = function () {
           if (request.readyState === XMLHttpRequest.DONE) {
               // Take some action
               if (request.status === 200) {
-                  submit.value = 'Success!';
+                  submit.value = 'Logging in...';
               } else if (request.status === 403) {
                   submit.value = 'Invalid credentials. Try again?';
               } else if (request.status === 500) {
                   alert('Something went wrong on the server' + request.status.toString());
-                  submit.value = 'Login';
+                  submit.value = 'Registered!';
               } else {
                   alert('Something went wrong on the server' + request.status.toString());
-                  submit.value = 'Login';
+                  submit.value = 'Registered!';
               }
               loadLogin();
           }  
