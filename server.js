@@ -56,7 +56,7 @@ app.get('/logout/:currentlocation', function (req, res) {
  if (currentfile === '') {
    res.sendFile(path.join(__dirname, 'ui', 'index.html'));
  } else {
-     res.sendFile(path.join(__dirname, 'ui', currentfile));
+     res.sendFile(path.join(__dirname, 'articles', currentfile));
  }
 });
 
