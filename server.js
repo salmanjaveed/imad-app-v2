@@ -40,27 +40,19 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-
-app.get('/auth/check-login', function (req, res) {
-   
+app.get('/check-login', function (req, res) {
    if (req.session && req.session.auth && req.session.auth.userId) {
-       //console.log(req.session, req.session.auth, req.session.auth.userId);
-       //Load the user object
-       pool.query('SELECT * FROM "user" WHERE id= $1', [req.session.auth.userId], function (err, result) {
-          if (err) { 
+       // Load the user object
+       pool.query('SELECT * FROM "user" WHERE id = $1', [req.session.auth.userId], function (err, result) {
+           if (err) {
               res.status(500).send(err.toString());
-          }  else {
-              g_isUserloggedIn = true;
-              g_loggedinUserName = result.rows[0].username;
-              g_loggedinUserId = result.rows[0].id;
-              res.send(result.rows[0].username);
-          }
+           } else {
+              res.send(result.rows[0].username);    
+           }
        });
    } else {
-       res.status(400).send('You are not Logged In!');
-       
+       res.status(400).send('You are not logged in');
    }
-    
 });
 
 
@@ -134,7 +126,6 @@ app.get('/get-comments/:articleName', function (req, res) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
-          
           res.send(JSON.stringify(result.rows));
       }
    });
@@ -240,7 +231,6 @@ app.post('/login', function (req, res) {
    });
 });
 
-
 app.post('/submit-comment/:articleName', function (req, res) {
    // Check if the user is logged in
     if (req.session && req.session.auth && req.session.auth.userId) {
@@ -271,6 +261,7 @@ app.post('/submit-comment/:articleName', function (req, res) {
         res.status(403).send('Only logged in users can comment');
     }
 });
+
  app.get('/get-stats', function (req, res) {
    // make a select request
    // return a response with the results - select all counts of articles, comments and users
