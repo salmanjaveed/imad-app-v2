@@ -486,10 +486,15 @@ app.get('/css/fonts/opensans/OpenSans-Regular-webfont.ttf', function (req, res) 
    res.sendFile(path.join(__dirname,'css/fonts/opensans','OpenSans-Regular-webfont.ttf')); 
 });
 
-app.get('/articles/images/user-01.png', function (req, res) {
+app.get('/images/user-01.png', function (req, res) {
    res.sendFile(path.join(__dirname,'images','user-01.png')); 
 });
 
+/*
+app.get('/articles/images/user-01.png', function (req, res) {
+   res.sendFile(path.join(__dirname,'images','user-01.png')); 
+});
+*/
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(process.env.PORT || 8080, function () {
   console.log(`IMAD course app listening on port ${port} || 8080}!`);
