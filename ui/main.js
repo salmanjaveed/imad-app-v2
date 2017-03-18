@@ -198,7 +198,7 @@ function loadLoginForm () {
               if (request.status === 200) {
                  // alert('User created successfully');
                   register.value = 'Registered!';
-                 loadRegisteredUser( username, password );
+                 loginRegisteredUser( username, password );
                  loadLogin();
                   
               } else {
@@ -221,7 +221,7 @@ function loadLoginForm () {
     };
 }
 
-function loginRegisteredUser ( psername, password ){
+function loginRegisteredUser ( username, password ){
     
 
       var request = new XMLHttpRequest();
