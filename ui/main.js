@@ -162,6 +162,7 @@ function loadLoginForm () {
                   loadLoginforComment();
               } else if (request.status === 403) {
                   submit.value = 'Invalid credentials. Try again?';
+                  document.getElementById('login-area').innerHTML = '';
               } else if (request.status === 500) {
                   alert('Something went wrong on the server' + request.status.toString());
                   submit.value = 'Login';
