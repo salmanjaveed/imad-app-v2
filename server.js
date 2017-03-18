@@ -48,16 +48,18 @@ app.get('/auth/check-login', function (req, res) {
 });
 
 
-app.get('/logout/:currentlocation', function (req, res) {
+app.get('/logout', function (req, res) {
    delete req.session.auth;
    //res.send('<html><body>Logged out!<br/><br/><a href="/">Back to home</a></body></html>');
- //  console.log(path.basename(__filename));
+   res.end();
+   
+ /*
  var currentfile = req.params.currentlocation;
  if (currentfile === '') {
    res.sendFile(path.join(__dirname, 'ui', 'index.html'));
  } else {
      res.sendFile(path.join(__dirname, 'articles', currentfile));
- }
+ }*/
 });
 
 
@@ -200,8 +202,6 @@ app.post('/login', function (req, res) {
                 // set cookie with a session id
                 // internally, on the server side, it maps the session id to an object
                 // { auth: {userId }}
-                 g_loggedinUserName = username; // Keep the user loggedin
-                 g_isUserloggedIn = true; // set flag to check if user is logged in
                 res.send('credentials correct!');
                 
               } else {
