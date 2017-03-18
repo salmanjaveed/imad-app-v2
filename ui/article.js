@@ -53,7 +53,7 @@ function loadCommentForm () {
     };
 }
 
-function loadLogin () {
+function loadLoginforComment () {
     // Check if the user is already logged in
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
@@ -126,7 +126,7 @@ function loadComments () {
 
 
 // The first thing to do is to check if the user is logged in!
-loadLogin();
+loadLoginforComment();
 loadComments();
 
 
