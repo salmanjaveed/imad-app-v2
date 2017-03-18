@@ -378,47 +378,37 @@ function loadStats () {
     request.open('GET', '/get-stats', true);
     request.send(null);
 }
-/*
-// Submit Comments
 
-function submitComment () {
- 
-    // Submit username/password to login
-     // Create a request object
-        var request = new XMLHttpRequest();
-        var submit = document.getElementById('submit_comment');
-        // Capture the response and store it in a variable
-        request.onreadystatechange = function () {
-          if (request.readyState === XMLHttpRequest.DONE) {
-              // Take some action
-              if (request.status === 200) {
-                  submit.value = 'Submit'; // Success
-                  document.getElementById('cMessage').value = ''; // reset the message
-              } else if (request.status === 403) {
-                  submit.value = 'Invalid credentials. Try again?';
-              } else if (request.status === 500) {
-                  alert('Something went wrong on the server' + request.status.toString());
-                  submit.value = 'Submit';
-              } else {
-                  alert('Something went wrong on the server' + request.status.toString());
-                  submit.value = 'Submit';
-              }
-              loadLogin();
-          }  
-          // Not done yet
-        };
-        
-        // Make the request
-        var comment = document.getElementById('comment').value;
-        //console.log(username);
-        //console.log(password);
-        request.open('POST', '/submit-comment', true);
-        request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({comment: comment}));  
-        submit.value = 'Submitting...';
-        
-  }
-*/
+function footerComments () {
+   
+        // Check if the user is already logged in
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            var footerComments = document.getElementById('footer-comments');
+            if (request.status === 200) {
+                var footcomments = JSON.parse(this.responseText);
+                var content = ' ';
+                
+                for (var i=0; i< footcomments.length && i<3; i++) {
+                    content +=`
+                    <li><a href="#"><p>${footcomments[i].comment}
+			        <br /><cite>${footcomments[i].username}</cite></p></a></li>
+                    `;
+
+                }
+                
+                 footerComments.innerHTML = content;
+            } else {
+                alert(request.err + request.status);
+                footerComments.innerHTML = 'Oops! Could not load all articles!';
+            }
+        }
+    };
+    
+    request.open('GET', '/get-footercomments', true);
+    request.send(null);
+}
 
 // The first thing to do is to check if the user is logged in!
 loadLogin();
