@@ -64,7 +64,7 @@ function loadLogin () {
         }
     };
     
-    request.open('GET', '/check-login', true);
+    request.open('GET', '/auth/check-login', true);
     request.send(null);
 }
 
