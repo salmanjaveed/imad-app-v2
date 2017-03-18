@@ -58,14 +58,15 @@ app.get('/auth/check-login', function (req, res) {
 
 app.get('/logout', function (req, res) {
    delete req.session.auth;
-   g_loggedinUserName = ''; // Keep the user loggedin
-   g_isUserloggedIn = false; // set flag to check if user is logged in
-   g_loggedinUserId = 0;
    //res.send('<html><body>Logged out!<br/><br/><a href="/">Back to home</a></body></html>');
  //  console.log(path.basename(__filename));
+ var currentfile = window.location.pathname.split('/')[2];
+ if (currentfile === '') {
    res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+ } else {
+     res.sendFile(path.join(__dirname, 'ui', currentfile));
+ }
 });
-
 
 
 var fs = require('fs'),
@@ -180,17 +181,6 @@ app.post('/create-user', function (req, res) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
-            g_loggedinUserName = username; // Keep the user loggedin
-            g_isUserloggedIn = true; // set flag to check if user is logged in
-      /*     //get the created users id in to the variable
-            pool.query('SELECT id FROM article ORDER BY id DESC LIMIT 1', function (err, result) {
-                if (err) {
-                    res.status(500).send(err.toString() + 'Cannot get create user Id!');
-                } else {
-                    g_loggedinUserId = result.rows[0].id;
-                }
-                }
-            } */
           res.send('User successfully created: ' + username);
       }
    });
@@ -289,9 +279,12 @@ app.post('/submit-comment/:articleName', function (req, res) {
       }
    });
 });
-
-
-
+/****
+ * 
+ * serve static files
+ * 
+ ****/
+ 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
@@ -316,98 +309,6 @@ app.get('/js/jquery-1.10.2.min.js', function (req, res) {
    res.sendFile(path.join(__dirname,'js','jquery-1.10.2.min.js')); 
 });
 
-
-/*
-app.get('/articles/css/default.css', function (req, res) {
-   res.sendFile(path.join(__dirname,'css','default.css')); 
-});
-
-app.get('/articles/css/media-queries.css', function (req, res) {
-   res.sendFile(path.join(__dirname,'css','media-queries.css')); 
-});
-
-app.get('/articles/js/modernizr.js', function (req, res) {
-   res.sendFile(path.join(__dirname,'js','modernizr.js')); 
-}); 
-
-app.get('/articles/css/layout.css', function (req, res) {
-   res.sendFile(path.join(__dirname,'css','layout.css')); 
-});
-
-app.get('/articles/images/thumb.jpg', function (req, res) {
-   res.sendFile(path.join(__dirname,'images','thumb.jpg')); 
-});
-
-app.get('/articles/js/jquery-1.10.2.min.js', function (req, res) {
-   res.sendFile(path.join(__dirname,'js','jquery-1.10.2.min.js')); 
-});
-
-app.get('/articles/js/jquery-migrate-1.2.1.min.js', function (req, res) {
-   res.sendFile(path.join(__dirname,'js','jquery-migrate-1.2.1.min.js')); 
-});
-
-app.get('/articles/js/main.js', function (req, res) {
-   res.sendFile(path.join(__dirname,'js','main.js')); 
-});
-
-app.get('/articles/css/fonts.css', function (req, res) {
-   res.sendFile(path.join(__dirname,'css','fonts.css')); 
-});
-
-app.get('/articles/css/font-awesome/css/font-awesome.min.css', function (req, res) {
-   res.sendFile(path.join(__dirname,'css/font-awesome/css','font-awesome.min.css')); 
-});
-
-app.get('/articles/css/img/header-content-bg.png', function (req, res) {
-   res.sendFile(path.join(__dirname,'css/img','header-content-bg.png')); 
-});
-
-app.get('/articles/css/fonts/merriweather/merriweather-regular-webfont.woff', function (req, res) {
-   res.sendFile(path.join(__dirname,'css/fonts/merriweather','/merriweather-regular-webfont.woff')); 
-});
-
-app.get('/articles/css/fonts/opensans/OpenSans-Regular-webfont.woff', function (req, res) {
-   res.sendFile(path.join(__dirname,'css/fonts/opensans','OpenSans-Regular-webfont.woff')); 
-});
-
-app.get('/articles/css/fonts/opensans/OpenSans-Light-webfont.woff', function (req, res) {
-   res.sendFile(path.join(__dirname,'/css/fonts/opensans','OpenSans-Light-webfont.woff')); 
-});
-
-app.get('/articles/css/font-awesome/fonts/fontawesome-webfont.woff', function (req, res) {
-   res.sendFile(path.join(__dirname,'css/font-awesome/fonts','fontawesome-webfont.woff')); 
-});
-
-app.get('/articles/css/font-awesome/fonts/fontawesome-webfont.ttf', function (req, res) {
-   res.sendFile(path.join(__dirname,'css/font-awesome/fonts','fontawesome-webfont.ttf')); 
-});
-
-
-app.get('/articles/css/fonts/opensans/OpenSans-Bold-webfont.woff', function (req, res) {
-   res.sendFile(path.join(__dirname,'/css/fonts/opensans','OpenSans-Bold-webfont.woff')); 
-});
-
-app.get('/articles/css/fonts/opensans/OpenSans-Semibold-webfont.woff', function (req, res) {
-   res.sendFile(path.join(__dirname,'css/fonts/opensans','OpenSans-Semibold-webfont.woff')); 
-});
-
-app.get('/articles/css/fonts/merriweather/merriweather-regular-webfont.ttf', function (req, res) {
-   res.sendFile(path.join(__dirname,'css/fonts/merriweather','merriweather-regular-webfont.ttf')); 
-});
-
-
-app.get('/articles/css/fonts/opensans/OpenSans-Light-webfont.ttf', function (req, res) {
-   res.sendFile(path.join(__dirname,'css/fonts/opensans','OpenSans-Light-webfont.ttf')); 
-});
-
-app.get('/articles/css/fonts/opensans/OpenSans-Regular-webfont.ttf', function (req, res) {
-   res.sendFile(path.join(__dirname,'css/fonts/opensans','OpenSans-Regular-webfont.ttf')); 
-});
-
-app.get('/articles/ui/main.js', function (req, res) {
-   res.sendFile(path.join(__dirname,'ui','main.js')); 
-});
-*/
 app.get('/css/default.css', function (req, res) {
    res.sendFile(path.join(__dirname,'css','default.css')); 
 });
@@ -468,7 +369,6 @@ app.get('/css/font-awesome/fonts/fontawesome-webfont.ttf', function (req, res) {
    res.sendFile(path.join(__dirname,'css/font-awesome/fonts','fontawesome-webfont.ttf')); 
 });
 
-
 app.get('/css/fonts/opensans/OpenSans-Bold-webfont.woff', function (req, res) {
    res.sendFile(path.join(__dirname,'/css/fonts/opensans','OpenSans-Bold-webfont.woff')); 
 });
@@ -480,7 +380,6 @@ app.get('/css/fonts/opensans/OpenSans-Semibold-webfont.woff', function (req, res
 app.get('/css/fonts/merriweather/merriweather-regular-webfont.ttf', function (req, res) {
    res.sendFile(path.join(__dirname,'css/fonts/merriweather','merriweather-regular-webfont.ttf')); 
 });
-
 
 app.get('/css/fonts/opensans/OpenSans-Light-webfont.ttf', function (req, res) {
    res.sendFile(path.join(__dirname,'css/fonts/opensans','OpenSans-Light-webfont.ttf')); 
@@ -494,11 +393,6 @@ app.get('/images/user-01.png', function (req, res) {
    res.sendFile(path.join(__dirname,'images','user-01.png')); 
 });
 
-/*
-app.get('/articles/images/user-01.png', function (req, res) {
-   res.sendFile(path.join(__dirname,'images','user-01.png')); 
-});
-*/
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(process.env.PORT || 8080, function () {
   console.log(`IMAD course app listening on port ${port} || 8080}!`);
