@@ -23,7 +23,7 @@ function loadCommentForm () {
     document.getElementById('comment-area').innerHTML = commentFormHtml;
     
     // Submit username/password to login
-    var submit = document.getElementById('submit');
+    var submit = document.getElementById('submit_comment');
     submit.onclick = function () {
         // Create a request object
         var request = new XMLHttpRequest();
