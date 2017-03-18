@@ -311,7 +311,7 @@ app.get('/ui/article.js', function (req, res) {
 app.get('/favicon.ico', function (req, res) {
   res.sendFile(path.join(__dirname, '/', 'favicon.ico'));
 });
-
+/*
 app.get('/articles/css/default.css', function (req, res) {
    res.sendFile(path.join(__dirname,'css','default.css')); 
 });
@@ -403,7 +403,7 @@ app.get('/articles/css/fonts/opensans/OpenSans-Regular-webfont.ttf', function (r
 app.get('/articles/ui/main.js', function (req, res) {
    res.sendFile(path.join(__dirname,'ui','main.js')); 
 });
-
+*/
 app.get('/css/default.css', function (req, res) {
    res.sendFile(path.join(__dirname,'css','default.css')); 
 });
