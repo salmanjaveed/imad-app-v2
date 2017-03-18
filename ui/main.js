@@ -418,3 +418,6 @@ loadArticles();
 
 //Load site stats 
 loadStats();
+
+//load footer comments
+footerComment();
