@@ -27,6 +27,7 @@ function loadCommentForm () {
                     document.getElementById('cMessage').value = '';
                     loadComments();   
                     loadStats();
+                    footerComments();
                 } else {
                     alert('Error! Could not submit comment');
                 }
