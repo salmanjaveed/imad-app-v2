@@ -4,22 +4,12 @@ var currentArticleTitle = window.location.pathname.split('/')[2];
 function loadCommentForm () {
     var commentFormHtml = `
                 <h3>Leave a Comment</h3>
-
-                  <!-- form -->
-             <!--     <form name="contactForm" id="contactForm" method="post" action="">
-  					   <fieldset>
-                -->
-                     <div class="message group">
+                    <div class="message group">
                         <label  for="cMessage">Message <span class="required">*</span></label>
                         <textarea name="cMessage"  id="cMessage" rows="10" cols="50" ></textarea>
                      </div>
 
-                     <button type="submit" class="submit" id="submit_comment">Submit</button>
-<!--
-  					   </fieldset>
-  				      </form> <!-- Form End -->
-
-        `;
+                     <button type="submit" class="submit" id="submit_comment">Submit</button>  `;
     document.getElementById('comment-area').innerHTML = commentFormHtml;
     
     // Submit username/password to login
