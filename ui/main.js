@@ -420,4 +420,4 @@ loadArticles();
 loadStats();
 
 //load footer comments
-footerComment();
+footerComments();
