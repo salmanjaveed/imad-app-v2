@@ -114,6 +114,7 @@ function loadComments () {
                   </li>`;
                 }
                 comments.innerHTML = content;
+                getNumComments ();
             } else {
                 comments.innerHTML('Oops! Could not load comments!');
             }
@@ -124,6 +125,24 @@ function loadComments () {
     request.send(null);
 }
 
+
+function getNumComments () {
+        // Check if the user is already logged in
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+      request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
+                var commentsCount = JSON.parse(this.responseText);
+                document.getElementById('Numcomments').innerHTML = commentsCount.count +  " Comments" ;
+                }
+        }
+        };
+    };
+    
+    request.open('GET', '/get-num-comments/' + currentArticleTitle, true);
+    request.send(null);
+}
 
 // The first thing to do is to check if the user is logged in!
 loadLoginforComment();
