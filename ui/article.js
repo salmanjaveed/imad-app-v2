@@ -92,7 +92,7 @@ function loadComments () {
                     <li class="depth-1">
 
                      <div class="avatar">
-                        <img width="50" height="50" class="avatar" src="images/user-01.png" alt="">
+                        <img width="50" height="50" class="avatar" src="/images/user-01.png" alt="">
                      </div>
 
                      <div class="comment-content">
