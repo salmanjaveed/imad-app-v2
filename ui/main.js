@@ -162,7 +162,8 @@ function loadLoginForm () {
                   loadLoginforComment();
               } else if (request.status === 403) {
                   submit.value = 'Invalid credentials. Try again?';
-                  if ( document.body.contains('login-area') ) {
+                  var exists = getElementById("login-area");
+                if ( !exists ) {
                     document.getElementById('login-area').innerHTML = '';
                 }
               } else if (request.status === 500) {
@@ -296,7 +297,8 @@ function logout() {
     request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
-                if ( document.body.contains('login-area') ) {
+                var exists = getElementById("login-area");
+                if ( !exists ) {
                     document.getElementById('login-area').innerHTML = '';
                 }
                 loadLoginForm();
