@@ -264,7 +264,7 @@ function loadLoggedInUser (username) {
     var loginArea = document.getElementById( 'login-area');
     var currentlocation = window.location.pathname.split('/')[2];
     loginArea.innerHTML = `<h4> Welcome ${username} !</h4>
-        <a href="/logout/${currentlocation}">Logout</a>`;
+        <a href="#" onclick="logout()">Logout</a>`;
 }
 
 function loadLogin () {
@@ -283,6 +283,23 @@ function loadLogin () {
     };
 
     request.open('GET', '/auth/check-login',true);
+    request.send(null);
+    
+}
+
+function logout() {
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
+               
+                loadLoginForm();
+            }
+            
+        }
+    };
+
+    request.open('GET', '/logout',true);
     request.send(null);
     
 }
