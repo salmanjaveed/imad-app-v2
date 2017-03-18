@@ -311,6 +311,12 @@ app.get('/ui/article.js', function (req, res) {
 app.get('/favicon.ico', function (req, res) {
   res.sendFile(path.join(__dirname, '/', 'favicon.ico'));
 });
+
+app.get('/js/jquery-1.10.2.min.js', function (req, res) {
+   res.sendFile(path.join(__dirname,'js','jquery-1.10.2.min.js')); 
+});
+
+
 /*
 app.get('/articles/css/default.css', function (req, res) {
    res.sendFile(path.join(__dirname,'css','default.css')); 
@@ -335,9 +341,7 @@ app.get('/articles/images/thumb.jpg', function (req, res) {
 app.get('/articles/js/jquery-1.10.2.min.js', function (req, res) {
    res.sendFile(path.join(__dirname,'js','jquery-1.10.2.min.js')); 
 });
-app.get('/js/jquery-1.10.2.min.js', function (req, res) {
-   res.sendFile(path.join(__dirname,'js','jquery-1.10.2.min.js')); 
-});
+
 app.get('/articles/js/jquery-migrate-1.2.1.min.js', function (req, res) {
    res.sendFile(path.join(__dirname,'js','jquery-migrate-1.2.1.min.js')); 
 });
