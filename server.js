@@ -279,7 +279,7 @@ app.post('/submit-comment/:articleName', function (req, res) {
  app.get('/get-footercomments', function (req, res) {
    // make a select request
    // return a response with the results - select all counts of articles, comments and users
-   pool.query('SELECT comment.*, "user".username FROM comment, "user" WHERE comment.user_id = "user".id', function (err, result) {
+   pool.query('SELECT comment.*, "user".username FROM comment, "user" WHERE comment.user_id = "user".id ORDER BY comment.timestamp DESC', function (err, result) {
        
       if (err) {
           res.status(500).send(err.toString());
