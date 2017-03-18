@@ -392,7 +392,7 @@ function footerComments () {
                 
                 for (var i=0; i< footcomments.length && i<3; i++) {
                     content +=`
-                    <li><a href="#"><p>${footcomments[i].comment}
+                    <li><a href="${footcomments[i].title}"><p>${footcomments[i].comment}
 			        <br /><cite>${footcomments[i].username}</cite></p></a></li>
                     `;
 
