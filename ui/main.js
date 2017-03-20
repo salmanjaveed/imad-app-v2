@@ -268,7 +268,11 @@ function loginRegisteredUser ( username, password ){
 function loadLoggedInUser (username) {
     var loginArea = document.getElementById( 'login-area');
     var currentlocation = window.location.pathname.split('/')[2];
-    loginArea.innerHTML = `<h4> Welcome ${username} !</h4>
+    loginArea.innerHTML = `<h5> Welcome </h5>
+    <a href="#" title="Change Profile"> ${username}!</a>
+        <br />
+        <a href="#" title="Compose a new Article">Compose an Article</a>
+        <a href="#" title="Edit an Article">Edit Your Article</a>
         <a href="#" onclick="logout()">Logout</a>`;
 }
 
