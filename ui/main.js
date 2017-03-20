@@ -272,7 +272,9 @@ function loadLoggedInUser (username) {
     <a href="#" title="Change Profile"> ${username}!</a>
         <br />
         <a href="#" title="Compose a new Article">Compose an Article</a>
+        <br />
         <a href="#" title="Edit an Article">Edit Your Article</a>
+        <br />
         <a href="#" onclick="logout()">Logout</a>`;
 }
 
