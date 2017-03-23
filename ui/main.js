@@ -481,7 +481,7 @@ function loadArticleComposeForm () {
         request.open('POST', '/submit-article', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({title: title, article: article}));  
-        register.value = 'Sending...';
+        submit.value = 'Sending...';
         /*
         request.open('POST', '/submit-article/' + currentArticleTitle , true);
         request.setRequestHeader('Content-Type', 'application/json');
