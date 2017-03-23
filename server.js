@@ -135,7 +135,9 @@ app.get('/articles/:articleName', function (req, res) {
             res.status(404).send('Article not found');
         } else {
             var articleData = result.rows[0];
-           
+        for (i=0;i<articleData.length;i++) {
+            console.log(articleData[i]);
+        }   
             res.send(createTemplate(articleData));
            
         }
