@@ -279,6 +279,7 @@ app.post('/submit-article', function (req, res) {
    var username = req.body.username;
    var article = req.body.article;
    var title = req.body.title;
+   console.log('username:'+username + 'Article:' + article + 'title: ' + title);
    pool.query('SELECT "user".id FROM "user" WHERE "user".username=$1',[username], function(err, result) {
        if (err) {
            res.status(500).send(err.toString());
