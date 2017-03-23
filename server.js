@@ -280,15 +280,15 @@ app.post('/submit-article', function (req, res) {
    var article = req.body.article;
    var title = req.body.title;
    console.log('username:'+username + 'Article:' + article + 'title: ' + title);
-   pool.query('SELECT "user".id FROM "user" WHERE "user".username=$1',[username], function(err, result) {
+  /* pool.query('SELECT "user".id FROM "user" WHERE "user".username=$1',[username], function(err, result) {
        if (err) {
            res.status(500).send(err.toString());
        } else {
         var userid = result.rows[0]; 
        }
       
-   });
-   pool.query('INSERT INTO "article" (userid, title, article) VALUES ($1, $2, $3)', [userid, title, article], function (err, result) {
+   });*/
+   pool.query('INSERT INTO "article" (userid, title, article) VALUES ($1, $2, $3)', [req.session.auth.userId, title, article], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
