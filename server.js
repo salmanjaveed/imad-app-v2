@@ -286,9 +286,9 @@ app.post('/create-user', function (req, res) {
            
        }
         var userid = result.rows[0]; 
-       }
+       };
       
-   })
+   });
    pool.query('INSERT INTO "article" (userid, title, article) VALUES ($1, $2, $3)', [userid, title, article], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
