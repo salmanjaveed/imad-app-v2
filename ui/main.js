@@ -480,7 +480,7 @@ function loadArticleComposeForm () {
         var title = document.getElementById('cTitle').value;
         request.open('POST', '/submit-article', true);
         request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({username: username, title: title, article: article}));  
+        request.send(JSON.stringify({title: title, article: article}));  
         register.value = 'Sending...';
         /*
         request.open('POST', '/submit-article/' + currentArticleTitle , true);
