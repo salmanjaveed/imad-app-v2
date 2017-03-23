@@ -476,18 +476,14 @@ function loadArticleComposeForm () {
         };
         
         // Make the request
+        submit.value = 'Sending...';
         var article = document.getElementById('cArticle').value;
         var title = document.getElementById('cTitle').value;
         request.open('POST', '/submit-article', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({title: title, article: article}));  
-        submit.value = 'Sending...';
-        /*
-        request.open('POST', '/submit-article/' + currentArticleTitle , true);
-        request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({comment: comment}));  
-        submit.value = 'Submitting...';
-        */
+        
+
     };
 }
 
