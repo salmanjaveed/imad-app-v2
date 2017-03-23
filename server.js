@@ -272,7 +272,7 @@ app.post('/submit-comment/:articleName', function (req, res) {
 
 
 //Create user function 
-app.post('/create-user', function (req, res) {
+app.post('/submit-article', function (req, res) {
    // username, password
    // {"username": "Salman", "password": "password"}
    // JSON
