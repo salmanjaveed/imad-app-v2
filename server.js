@@ -284,7 +284,7 @@ app.post('/submit-article', function (req, res) {
            res.status(500).send(err.toString());
        } else {
         var userid = result.rows[0]; 
-       };
+       }
       
    });
    pool.query('INSERT INTO "article" (userid, title, article) VALUES ($1, $2, $3)', [userid, title, article], function (err, result) {
