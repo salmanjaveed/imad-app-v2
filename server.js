@@ -269,6 +269,36 @@ app.post('/submit-comment/:articleName', function (req, res) {
       }
    });
 });
+
+
+//Create user function 
+app.post('/create-user', function (req, res) {
+   // username, password
+   // {"username": "Salman", "password": "password"}
+   // JSON
+   var username = req.body.username;
+   var article = req.body.article;
+   var title = req.body.title;
+   pool.query('SELECT "user".id FROM "user" WHERE "user".username=$1',[username], function(err, result) {
+       if (err) {
+           res.status(500).send(err.toString());
+       } else {
+           
+       }
+        var userid = result.rows[0]; 
+       }
+      
+   })
+   pool.query('INSERT INTO "article" (userid, title, article) VALUES ($1, $2, $3)', [userid, title, article], function (err, result) {
+      if (err) {
+          res.status(500).send(err.toString());
+      } else {
+          res.send('Article Added Successfully: ' + title);
+      }
+   });
+});
+
+
 /****
  * 
  * serve static files
