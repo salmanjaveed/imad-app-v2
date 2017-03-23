@@ -159,7 +159,7 @@ function loadLoginForm () {
               // Take some action
               if (request.status === 200) {
                   submit.value = 'Success!';
-                  loadLoginforComment();
+                 // loadLoginforComment();
               } else if (request.status === 403) {
                   submit.value = 'Invalid credentials. Try again?';
                   var exists = document.getElementById("login-area");
