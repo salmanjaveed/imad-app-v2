@@ -283,8 +283,6 @@ app.post('/submit-article', function (req, res) {
        if (err) {
            res.status(500).send(err.toString());
        } else {
-           
-       }
         var userid = result.rows[0]; 
        };
       
