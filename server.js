@@ -276,7 +276,7 @@ app.post('/submit-article', function (req, res) {
    // username, password
    // {"username": "Salman", "password": "password"}
    // JSON
-   var username = req.body.username;
+   var username = req.session.auth.userId;
    var article = req.body.article;
    var title = req.body.title;
    console.log('username:'+username + 'Article:' + article + 'title: ' + title);
