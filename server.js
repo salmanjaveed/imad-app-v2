@@ -288,7 +288,7 @@ app.post('/submit-article', function (req, res) {
        }
       
    });*/
-   pool.query('INSERT INTO "article" (user_id, title, content, heading, date) VALUES ($1, $2, $3, $4, $5)', [req.session.auth.userId, title, article, title, date.now()], function (err, result) {
+   pool.query('INSERT INTO "article" (user_id, title, content, heading) VALUES ($1, $2, $3, $4)', [req.session.auth.userId, title, article, title], function (err, result) {
       if (err) {
           res.status(500).send(err.toString());
       } else {
