@@ -136,7 +136,7 @@ function getNumComments () {
     request.send(null);
 }
 
-
+/*
 function loadArticleComposeForm () {
     var ArticleComposeFormHtml = `
                 <h3>Post a New Article</h3>
@@ -184,7 +184,7 @@ function loadArticleComposeForm () {
 
     };
 }
-
+*/
 
 
 // The first thing to do is to check if the user is logged in!
