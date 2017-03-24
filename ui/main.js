@@ -480,7 +480,7 @@ function loadArticleComposeForm () {
         var article = document.getElementById('cArticle').value;
         var heading = document.getElementById('cTitle').value;
         var title = document.getElementById('cTitle').value;
-        title = str.replace(/\W+/g,'-').toLowerCase().trim()
+        title = title.replace(/\W+/g,'-').toLowerCase().trim()
         request.open('POST', '/submit-article', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({title: title, article: article, heading: heading}));  
