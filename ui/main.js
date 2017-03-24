@@ -271,7 +271,7 @@ function loadLoggedInUser (username) {
     loginArea.innerHTML = `<h5> Welcome 
     <a href="#" title="Change Profile"> ${username}!</a></h5>
         
-        <a href="#" title="Compose a new Article" onclick="loadArticleComposeForm()">Compose an Article</a>
+        <a href="#" title="Compose a new Article">Compose an Article</a>
         <br />
         <a href="#" title="Edit an Article" >Edit Your Article</a>
         <br />
