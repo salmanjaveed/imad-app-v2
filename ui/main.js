@@ -271,7 +271,7 @@ function loadLoggedInUser (username) {
     loginArea.innerHTML = `<h5> Welcome 
     <a href="#" title="Change Profile"> ${username}!</a></h5>
         
-        <a href="#" title="Compose a new Article">Compose an Article</a>
+        <a href="#" title="Compose a new Article" onclick="loadArticleComposeForm()">Compose an Article</a>
         <br />
         <a href="#" title="Edit an Article" >Edit Your Article</a>
         <br />
@@ -442,55 +442,7 @@ function footerComments () {
     request.send(null);
 }
 
-/*
-function loadArticleComposeForm () {
-    var ArticleComposeFormHtml = `
-                <h3>Post a New Article</h3>
-                    <div class="message group">
-                        <input id="cTitle" placeholder="Enter Title"> <span class="required"></span>
-                        <label  for="cArticle">Article <span class="required">*</span></label>
-                        <textarea name="cArticle"  id="cArticle" rows="10" cols="50" ></textarea>
-                     </div>
 
-                     <button type="submit" class="submit" id="submit_article">Submit</button>  `;
-    document.getElementById('articles-list').innerHTML = ArticleComposeFormHtml;
-    
-    // Submit username/password to login
-    var submit = document.getElementById('submit_article');
-    submit.onclick = function () {
-        // Create a request object
-        var request = new XMLHttpRequest();
-        
-        // Capture the response and store it in a variable
-        request.onreadystatechange = function () {
-          if (request.readyState === XMLHttpRequest.DONE) {
-                // Take some action
-                if (request.status === 200) {
-                    // clear the form & reload all the comments
-                    submit.value = "Done!";
-                    document.getElementById('cArticle').value = '';
-                    document.getElementById('cTitle').value = '';
-                } else {
-                    alert('Error! Could not submit New Article');
-                }
-                submit.value = 'Submit';
-          }
-        };
-        
-        // Make the request
-        submit.value = 'Sending...';
-        var article = document.getElementById('cArticle').value;
-        var heading = document.getElementById('cTitle').value;
-        var title = document.getElementById('cTitle').value;
-        title = title.replace(/\W+/g,'-').toLowerCase().trim()
-        request.open('POST', '/submit-article', true);
-        request.setRequestHeader('Content-Type', 'application/json');
-        request.send(JSON.stringify({title: title, article: article, heading: heading}));  
-        
-
-    };
-}
-*/
 
 // The first thing to do is to check if the user is logged in!
 loadLogin();
