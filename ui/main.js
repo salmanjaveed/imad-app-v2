@@ -273,7 +273,7 @@ function loadLoggedInUser (username) {
         
         <a href="#" title="Compose a new Article">Compose an Article</a>
         <br />
-        <a href="#" title="Edit an Article" onclick="loadArticleComposeForm()">Edit Your Article</a>
+        <a href="#" title="Edit an Article" >Edit Your Article</a>
         <br />
         <a href="#" onclick="logout()">Logout</a>`;
 }
@@ -442,7 +442,7 @@ function footerComments () {
     request.send(null);
 }
 
-
+/*
 function loadArticleComposeForm () {
     var ArticleComposeFormHtml = `
                 <h3>Post a New Article</h3>
@@ -467,7 +467,9 @@ function loadArticleComposeForm () {
                 // Take some action
                 if (request.status === 200) {
                     // clear the form & reload all the comments
+                    submit.value = "Done!";
                     document.getElementById('cArticle').value = '';
+                    document.getElementById('cTitle').value = '';
                 } else {
                     alert('Error! Could not submit New Article');
                 }
@@ -488,7 +490,7 @@ function loadArticleComposeForm () {
 
     };
 }
-
+*/
 
 // The first thing to do is to check if the user is logged in!
 loadLogin();
