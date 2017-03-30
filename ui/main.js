@@ -271,7 +271,7 @@ function loadLoggedInUser (username) {
     loginArea.innerHTML = `<h5> Welcome 
     <a href="#" title="Change Profile"> ${username}!</a></h5>
         
-        <a href="#" title="Compose a new Article">Compose an Article</a>
+        <a href="#" title="Compose a new Article" onclick="loadArticleComposeForm()">Compose an Article</a>
         <br />
         <a href="#" title="Edit an Article" >Edit Your Article</a>
         <br />
@@ -447,9 +447,9 @@ function footerComments () {
 // The first thing to do is to check if the user is logged in!
 loadLogin();
 
-// Now this is something that we could have directly done on the server-side using templating too!
+/* // Now this is something that we could have directly done on the server-side using templating too!
 loadArticles();
-
+*/
 //Load site stats 
 loadStats();
 
