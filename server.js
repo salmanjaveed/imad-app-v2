@@ -25,6 +25,7 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 
 var pool = new Pool(config);
+var counter = 1;
 
 app.use(session({ secret: 'someRandomSecretValuet', cookie: { maxAge: 1000 * 60 * 60 * 24 * 30 }, resave: true, saveUninitialized: true }));
 
@@ -231,12 +232,12 @@ app.post('/submit-comment/:articleName', function (req, res) {
                             if (err) {
                                 res.status(500).send(err.toString());
                             } else {
-                                res.status(200).send('Comment inserted!')
+                                res.status(200).send('Comment inserted!');
                             }
                         });
                 }
             }
-       });      
+       });     
     } else {
         res.status(403).send('Only logged in users can comment');
     }
@@ -245,13 +246,14 @@ app.post('/submit-comment/:articleName', function (req, res) {
  app.get('/get-stats', function (req, res) {
    // make a select request
    // return a response with the results - select all counts of articles, comments and users
-   pool.query('SELECT (select count(*)  from article) as articleCount, (select count(*)  from "user") as userCount, (select count(*) FROM comment) as commentCount', function (err, result) {
+   pool.query(`SELECT (select count(*)  from article) as articleCount, (select count(*)  from "user") as userCount, (select count(*) FROM comment) as commentCount`, function (err, result) {
        
       if (err) {
           res.status(500).send(err.toString());
       } else {
-          
-          res.send(JSON.stringify(result.rows));
+          counter = counter + 1;
+          result.rows[0].counter = counter.toString();
+         res.send(JSON.stringify(result.rows));
       }
    });
 });
