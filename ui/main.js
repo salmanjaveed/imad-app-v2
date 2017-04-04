@@ -390,8 +390,9 @@ function loadStats () {
                 var content = ' ';
                 
                 for (var i=0; i< stats.length; i++) {
+                    
                     content +=`
-                    <li><a href="#">123 <em>Visitors</em></a></li>
+                    <li><a href="#">${stats[i].counter} <em>Visitors</em></a></li>
                         <li><a href="#">${stats[i].articlecount} <em>Articles</em></a></li>
                         <li><a href="#">${stats[i].commentcount} <em>Comments</em></a></li>
                         <li><a href="#">${stats[i].usercount} <em>Registered Users</em></a></li>
@@ -401,7 +402,7 @@ function loadStats () {
                 
                  statsTab.innerHTML = content;
             } else {
-                alert(request.err + request.status);
+                alert('get-stats: ' + request.err + request.status);
                 statsTab.innerHTML = 'Oops! Could not load all articles!';
             }
         }
@@ -432,7 +433,7 @@ function footerComments () {
                 
                  footerComments.innerHTML = content;
             } else {
-                alert(request.err + request.status);
+                alert('footer '+ request.err + request.status);
                 footerComments.innerHTML = 'Oops! Could not load all articles!';
             }
         }
@@ -442,7 +443,7 @@ function footerComments () {
     request.send(null);
 }
 
- 
+
 
 // The first thing to do is to check if the user is logged in!
 loadLogin();

@@ -10,6 +10,7 @@ function loadCommentForm () {
                      </div>
 
                      <button type="submit" class="submit" id="submit_comment">Submit</button>  `;
+    
     document.getElementById('comment-area').innerHTML = commentFormHtml;
     
     // Submit username/password to login
@@ -105,8 +106,9 @@ function loadComments () {
 
                   </li>`;
                 }
+                if (comments) {
                 comments.innerHTML = content;
-                getNumComments ();
+                getNumComments ();}
             } else {
                 comments.innerHTML('Oops! Could not load comments!');
             }
@@ -176,11 +178,11 @@ function loadArticleComposeForm () {
         var article = document.getElementById('cArticle').value;
         var heading = document.getElementById('cTitle').value;
         var title = document.getElementById('cTitle').value;
-        title = title.replace(/\W+/g,'-').toLowerCase().trim()
+        title = title.replace(/\W+/g,'-').toLowerCase().trim();
         request.open('POST', '/submit-article', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({title: title, article: article, heading: heading}));  
-         
+        
 
     };
 }
