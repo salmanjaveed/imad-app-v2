@@ -29,9 +29,6 @@ var counter = 1;
 
 app.use(session({ secret: 'someRandomSecretValuet', cookie: { maxAge: 1000 * 60 * 60 * 24 * 30 }, resave: true, saveUninitialized: true }));
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
 
 app.get('/auth/check-login', function (req, res) {
    if (req.session && req.session.auth && req.session.auth.userId) {
@@ -46,6 +43,10 @@ app.get('/auth/check-login', function (req, res) {
    } else {
        res.status(400).send('You are not logged in');
    }
+});
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 
