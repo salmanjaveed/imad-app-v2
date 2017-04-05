@@ -347,7 +347,7 @@ function loadArticles () {
 								<span class="meta-sep">&bull;</span>-->
 								<li>${articleData[i].username}</li>
 							</ul>
-						</div>
+						</div> 
 					</header>
 						<div class="entry-content" align="justify">
 						<p class="drop-cap">${articleData[i].content.substring(0,300)}</p>
