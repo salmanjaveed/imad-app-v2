@@ -361,7 +361,7 @@ app.get('/js/main.js', function (req, res) {
 
 app.get('/css/fonts.css', function (req, res) {
    res.sendFile(path.join(__dirname,'css','fonts.css')); 
-});
+}); 
 
 app.get('/css/font-awesome/css/font-awesome.min.css', function (req, res) {
    res.sendFile(path.join(__dirname,'css/font-awesome/css','font-awesome.min.css')); 
