@@ -384,6 +384,10 @@ app.get('/css/img/header-content-bg.png', function (req, res) {
    res.sendFile(path.join(__dirname,'css/img','header-content-bg.png')); 
 });
 
+app.get('/css/img/header-content-bg_@2x.png', function (req, res) {
+   res.sendFile(path.join(__dirname,'css/img','header-content-bg_@2x.png')); 
+});
+
 app.get('/css/fonts/merriweather/merriweather-regular-webfont.woff', function (req, res) {
    res.sendFile(path.join(__dirname,'css/fonts/merriweather','/merriweather-regular-webfont.woff')); 
 });
